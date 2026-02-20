@@ -37,10 +37,25 @@ h5 {
     font-size: 30px;
 }
 
-footer, .footer-text {
+.copyright-text {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    font-size: 25px;
+    font-size: 26px;
+    margin: 0;
+}
+
+.powered-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.contact-item {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
 }
 
 .nav-links a, .dropbtn, .btn-sales, .dropdown-content a, .btn-learn-more {

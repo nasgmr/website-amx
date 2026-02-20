@@ -13,7 +13,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: #000000;
-    padding: 15px 50px;
+    padding: 20px 80px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -25,6 +25,7 @@
     display: flex;
     list-style: none;
     align-items: center;
+    gap: 40px;
 }
 
 .nav-links li {
@@ -32,13 +33,13 @@
 }
 
 .nav-links a, .dropbtn {
-    font-size: 20px; 
+    font-size: 22px; 
     color: #ffffff;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 10px 15px;
     display: block;
-    border-radius: 4px;
     transition: background-color 0.3s;
+    border-radius: 8px;
 }
 
 .nav-links a:hover {
@@ -69,7 +70,8 @@
   color: #000000;
   padding: 12px 20px;
   font-weight: 500;
-  border-radius: 0;
+  margin: 4px;
+  border-radius: 6px;
 }
 
 .dropdown-content a:hover {
@@ -79,29 +81,32 @@
 .dropdown:hover .dropbtn {
   background-color: #8a8a8a;
   color: #000000;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 
 /*Talk To Sales Button */
 .btn-sales {
-  font-size: 20px;
-  background-color: #FFD700;
+  font-size: 22px;
+  background-color: #FFDD00;
   color: #000000;
   text-decoration: none;
-  padding: 10px 24px;
+  padding: 12px 28px;
   border-radius: 6px;
   transition: background-color 0.3s, transform 0.2s;
+  margin-right: 20px;
 }
 
 .btn-sales:hover {
-  background-color: #e6c200;
+  background-color: #C76300;
   transform: scale(1.05);
 }
 
 
 /* Homepage Hero Section */
 .homepage-body {
-    background-color: #4b4b4b;
+    background-color: #4C4C4C;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -110,14 +115,22 @@
 
 .hero-section {
     text-align: center;
-    padding-top: 15vh;
     color: #ffffff;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25vh;
 }
 
 .hero-section h1 {
     margin-bottom: 10px;
     letter-spacing: 2px;
+    text-shadow:
+        0 0 10px  rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.5),
+        0 0 30px rgba(222, 215, 173, 0.375)
 }
 
 .hero-section p {
@@ -143,18 +156,46 @@
 /* Footer */
 .footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    background-color: #8a8a8a;
+    gap: 60px;
+    background-color: #8a8a8a; 
     color: #ffffff;
-    padding: 10px 50px;
-    margin-top: auto;
+    padding: 20px 10px; 
+    margin-top: auto; 
 }
 
-.footer-left p, .footer-right p {
-    margin: 2px 0;
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
 }
 
 .footer-right {
-    text-align: right;
+    margin: 5px 0;
 }
+
+
+/* SOCIAL MEDIA */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 17.5px;
+    margin-top: 15px;
+}
+
+.social-link {
+    color: #ffffff;
+    font-size: 28px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+}
+
+.social-link:hover .fa-instagram { color: #E1306C; text-shadow: 0 0 10px #E1306C; }
+.social-link:hover .fa-linkedin-in { color: #0077B5; text-shadow: 0 0 10px #0077B5; }
+.social-link:hover .fa-youtube { color: #FF0000; text-shadow: 0 0 10px #FF0000; }
+.social-link:hover .fa-facebook-f { color: #4267B2; text-shadow: 0 0 10px #4267B2; }
