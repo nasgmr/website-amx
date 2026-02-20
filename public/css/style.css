@@ -127,10 +127,6 @@
 .hero-section h1 {
     margin-bottom: 10px;
     letter-spacing: 2px;
-    text-shadow:
-        0 0 10px  rgba(255, 255, 255, 0.8),
-        0 0 20px rgba(255, 255, 255, 0.5),
-        0 0 30px rgba(222, 215, 173, 0.375)
 }
 
 .hero-section p {
@@ -200,3 +196,125 @@
 .social-link:hover .fa-linkedin-in { color: #0077B5; text-shadow: 0 0 10px #0077B5; }
 .social-link:hover .fa-youtube { color: #FF0000; text-shadow: 0 0 10px #FF0000; }
 .social-link:hover .fa-facebook-f { color: #4267B2; text-shadow: 0 0 10px #4267B2; }
+
+
+
+/* Products Page */
+.products-container {
+    padding: 60px 80px;
+    color: #ffffff;
+}
+
+.product-card {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+.product-card.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.product-image-box {
+    flex: 1;
+    background-color: #d1d1d1;
+    color: #000;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 24px;
+    border-radius: 12px;
+}
+
+.product-info {
+    flex: 1;
+}
+
+.product-category {
+    font-size: 20px;
+    color: #ffdd00;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.product-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.product-info p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #cccccc;
+}
+
+.btn-learn-more-products {
+    background-color: #ffdd00;
+    padding: 13px 22px;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 9px;
+    font-size: 25px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-learn-more-products:hover {
+    background-color: #C76300;
+    color: #000000;
+}
+
+/* How to Use Section */
+.drone-usage-section {
+    margin-top: 100px;
+    padding-top: 50px;
+}
+
+.usage-title {
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.usage-subtitle {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
+.usage-options {
+    display: flex;
+    gap: 40px;
+}
+
+.usage-box {
+    flex: 1;
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #333;
+}
+
+.usage-box h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    border-bottom: 2px solid #FFD700;
+    padding-bottom: 10px;
+}
+
+.usage-box ul {
+    padding-left: 20px;
+}
+
+.usage-box li {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+    color: #cccccc;
+}
