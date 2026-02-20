@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Encode+Sans+Semi+Condensed:wght@600&family=Overpass:wght@300;400;500&family=Poppins:wght@500&display=swap');
+
+
+body {
+    font-family: 'Overpass', sans-serif; /* Default Font */
+}
+
+
+/* Typography */
+h1 {
+    font-family: 'Audiowide', cursive;
+    font-weight: 400;
+    font-size: 55px;
+}
+
+h2 {
+    font-family: 'Overpass', sans-serif;
+    font-weight: 500;
+    font-size: 45px;
+}
+
+h3 {
+    font-family: 'Overpass', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+}
+
+h4 {
+    font-family: 'Overpass', sans-serif;
+    font-weight: 300;
+    font-size: 35px;
+}
+
+h5 {
+    font-family: 'Overpass', sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+}
+
+footer, .footer-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.nav-links a, .dropbtn, .btn-sales, .dropdown-content a, .btn-learn-more {
+    font-family: 'Encode Sans Semi Condensed', sans-serif;
+}
