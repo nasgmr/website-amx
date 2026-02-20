@@ -134,16 +134,17 @@
 }
 
 .hero-section p {
+    font-size: 22.5px;
     margin-bottom: 30px;
 }
 
 .btn-learn-more {
-    border: 2px solid #ffffff;
-    padding: 10px 25px;
+    border: 2.5px solid #ffffff;
+    padding: 13px 22px;
     color: #ffffff;
     text-decoration: none;
-    border-radius: 4px;
-    font-size: 20px;
+    border-radius: 9px;
+    font-size: 25px;
     transition: background-color 0.3s, color 0.3s;
 }
 
