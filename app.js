@@ -4,6 +4,7 @@ const app = express();
 
 const indexRouter = require('./routes/index');
 const productRouter = require('./routes/productRoutes');
+const serviceRouter = require('./routes/serviceRoutes');
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -11,6 +12,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/', productRouter);
+app.use('/', serviceRouter);
 
 app.get('/*', (req, res) => {
     res.send('<h1 style="text-align:center; margin-top:50px;">This page is still being developed.</h1><p style="text-align:center;"><a href="/">Back to Home</a></p>');
