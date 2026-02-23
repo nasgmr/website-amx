@@ -14,11 +14,12 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/', productRouter);
 app.use('/', serviceRouter);
-app.use('/', resourcesRoutes);
 app.use('/', usecaseRoutes);
 app.use('/', dronepediaRoutes);
+app.use('/', resourcesRoutes);
+app.use('/', productRouter);
+
 
 app.get('/*', (req, res) => {
     res.send('<h1 style="text-align:center; margin-top:50px;">This page is still being developed.</h1><p style="text-align:center;"><a href="/">Back to Home</a></p>');
@@ -27,4 +28,8 @@ app.get('/*', (req, res) => {
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server AMX UAV berjalan di http://localhost:${PORT}`);
+});
+
+app.get('/test-route', (req, res) => {
+    res.send('Rute Berhasil Terbuka!');
 });
