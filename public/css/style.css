@@ -603,3 +603,259 @@ body {
     color: #bbbbbb;
     line-height: 1.4;
 }
+
+
+
+/* Dronepedia - How it Works Page */
+.dronepedia-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.pdf-style-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    width: 100%;
+}
+
+.grid-col-left {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.grid-col-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.mode-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-top: 3px solid #FFC000;
+    border-radius: 0 0 8px 8px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.auto-card {
+    height: 100%; 
+}
+
+.mode-img-box {
+    width: 100%;
+    height: 220px;
+    background-color: #2a2a2a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #777;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #444;
+}
+
+.auto-img-box {
+    flex-grow: 1; 
+    min-height: 250px;
+}
+
+.mode-info {
+    padding: 30px;
+}
+
+.mode-info h3 {
+    color: #FFC000;
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.mode-info p {
+    color: #cccccc;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+
+/* Dronepedia - Classifications Page */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+.drone-type-card {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 192, 0, 0.2);
+    border-top: 4px solid #FFC000;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.drone-type-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 192, 0, 0.6);
+}
+
+.drone-img-box {
+    width: 100%;
+    height: 200px;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #333;
+}
+
+.drone-info {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.drone-info h3 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 22px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.pros-cons-box {
+    margin-bottom: 20px;
+}
+
+.pros-cons-box:last-child {
+    margin-bottom: 0;
+}
+
+.pros-title {
+    color: #4CAF50;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(76, 175, 80, 0.3);
+    padding-bottom: 5px;
+}
+
+.cons-title {
+    color: #F44336;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(244, 67, 54, 0.3);
+    padding-bottom: 5px;
+}
+
+.pros-cons-box ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.pros-cons-box ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: #cccccc;
+    line-height: 1.5;
+}
+
+.pros-cons-box ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #FFC000;
+    font-weight: bold;
+}
+
+
+
+/* Dronepedia - Applications Page */
+.applications-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+.app-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.app-card:hover {
+    transform: translateY(-8px);
+    border-color: #FFC000;
+}
+
+.app-img-box {
+    width: 100%;
+    height: 180px;
+    background-color: #2a2a2a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.app-title-box {
+    padding: 20px 15px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-title-box h3 {
+    color: #FFC000;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.4;
+    text-transform: capitalize;
+}
+
+@media (max-width: 900px) {
+    .applications-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .applications-grid {
+        grid-template-columns: 1fr;
+    }
+}

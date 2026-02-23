@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dronepedia - Classifications | AMX UAV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="homepage-body">
+
+    <%- include('partials/navbar') %>
+
+    <main class="use-case-container">
+        
+        <div class="use-case-header-section">
+            <h4 class="use-case-label">DRONEPEDIA</h4>
+            
+            <nav class="sub-nav">
+                <a href="/resources/dronepedia/how-it-works">HOW IT WORKS</a>
+                <a href="/resources/dronepedia/classifications" class="active">CLASSIFICATION</a>
+                <a href="/resources/dronepedia/applications">APPLICATIONS</a>
+            </nav>
+
+            <h1 class="category-main-title">CLASSIFICATION & COMPARISON</h1>
+        </div>
+
+        <div class="dronepedia-content">
+            <div class="comparison-grid">
+                
+                <div class="drone-type-card">
+                    <div class="drone-img-box">IMAGE: FIXED WING</div>
+                    <div class="drone-info">
+                        <h3>Fixed Wing</h3>
+                        
+                        <div class="pros-cons-box">
+                            <h4 class="pros-title"><i class="fa-solid fa-plus"></i> Advantages</h4>
+                            <ul>
+                                <li>More flight time compared to rotary wing & hybrid</li>
+                                <li>Wide coverage</li>
+                                <li>Gliding capability (more safety)</li>
+                                <li>High speed</li>
+                            </ul>
+                        </div>
+
+                        <div class="pros-cons-box">
+                            <h4 class="cons-title"><i class="fa-solid fa-minus"></i> Disadvantages</h4>
+                            <ul>
+                                <li>Wide area for take-off & landing needs</li>
+                                <li>Can't hovering</li>
+                                <li>Special skills needed</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="drone-type-card">
+                    <div class="drone-img-box">IMAGE: ROTARY WING</div>
+                    <div class="drone-info">
+                        <h3>Rotary Wing</h3>
+                        
+                        <div class="pros-cons-box">
+                            <h4 class="pros-title"><i class="fa-solid fa-plus"></i> Advantages</h4>
+                            <ul>
+                                <li>Can hovering (hold position)</li>
+                                <li>Move to any direction (3D)</li>
+                                <li>Easier control than fixed wing</li>
+                                <li>Take-off & landing from limited space</li>
+                            </ul>
+                        </div>
+
+                        <div class="pros-cons-box">
+                            <h4 class="cons-title"><i class="fa-solid fa-minus"></i> Disadvantages</h4>
+                            <ul>
+                                <li>Limited flight time compared to fixed wing and hybrid</li>
+                                <li>Limited coverage</li>
+                                <li>If there is rotor malfunction, no gliding capability</li>
+                                <li>Low speed</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="drone-type-card">
+                    <div class="drone-img-box">IMAGE: HYBRID VTOL</div>
+                    <div class="drone-info">
+                        <h3>Hybrid VTOL</h3>
+                        
+                        <div class="pros-cons-box">
+                            <h4 class="pros-title"><i class="fa-solid fa-plus"></i> Advantages</h4>
+                            <ul>
+                                <li>Easier control than fixed wing</li>
+                                <li>More flight time than rotary wing</li>
+                                <li>Wider coverage than rotary wing</li>
+                                <li>Glide Capability</li>
+                            </ul>
+                        </div>
+
+                        <div class="pros-cons-box">
+                            <h4 class="cons-title"><i class="fa-solid fa-minus"></i> Disadvantages</h4>
+                            <ul>
+                                <li>Limited flight time compared to fixed wing</li>
+                                <li>Higher price compared than fixed wing and rotary wing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <%- include('partials/footer') %>
+
+</body>
+</html>

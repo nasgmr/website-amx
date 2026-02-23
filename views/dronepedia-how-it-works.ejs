@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dronepedia - How It Works | AMX UAV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="homepage-body">
+
+    <%- include('partials/navbar') %>
+
+    <main class="use-case-container"> <div class="use-case-header-section">
+            <h4 class="use-case-label">DRONEPEDIA</h4>
+            
+            <nav class="sub-nav">
+                <a href="/resources/dronepedia/how-it-works" class="active">HOW IT WORKS</a>
+                <a href="/resources/dronepedia/classifications">CLASSIFICATION</a>
+                <a href="/resources/dronepedia/applications">APPLICATIONS</a>
+            </nav>
+
+            <h1 class="category-main-title">DRONE WORKS</h1>
+        </div>
+
+        <div class="dronepedia-content">
+            
+            <div class="pdf-style-grid">
+                
+                <div class="grid-col-left">
+                    <div class="mode-card">
+                        <div class="mode-img-box">IMAGE: MANUAL MODE</div>
+                        <div class="mode-info">
+                            <h3>Manual Mode</h3>
+                            <p>Pilot/Operator directly control the aircraft through radio controller without sensors and flight controller assistant.</p>
+                        </div>
+                    </div>
+
+                    <div class="mode-card">
+                        <div class="mode-img-box">IMAGE: ASSISTED MODE</div>
+                        <div class="mode-info">
+                            <h3>Assisted Mode</h3>
+                            <p>Pilot/Operator directly control the aircraft through radio controller with sensors and flight controller assistant for flight stabilization.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-col-right">
+                    <div class="mode-card auto-card">
+                        <div class="mode-img-box auto-img-box">IMAGE: AUTOMATIC MODE</div>
+                        <div class="mode-info">
+                            <h3>Automatic Mode</h3>
+                            <p>Drone controlled by onboard flight controller & sensors. The mission data was entered by operator, then drone can fly autonomously.</p>
+                            <br>
+                            <p>While flying, operator can monitor and change the mission parameter through GCS. In emergency condition, operator can take over the drone control (manual/assisted mode).</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <%- include('partials/footer') %>
+
+</body>
+</html>
