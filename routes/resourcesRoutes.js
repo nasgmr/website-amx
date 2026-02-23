@@ -8,3 +8,11 @@ router.get('/resources', (req, res) => {
 });
 
 module.exports = router;
+
+router.get('/resources/use-case', (req, res) => {
+    res.render('use-case');
+});
+
+router.get('/resources/dronepedia',(req, res) => {
+    res.render('dronepedia');
+});

@@ -445,28 +445,29 @@ body {
 
 /* Resources-Main Page */
 .resources-page .hero-section {
+    height: calc(100vh - 160px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 80vh;
-    padding: 60px 20px;
+    padding: 0 20px;
     text-align: center;
+    padding-top: 15vh;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .resources-page .hero-section h1 {
-    font-size: clamp(32px, 5vw, 56px);
-    max-width: 900px;
+    font-size: 46px;
+    max-width: 100%;
     margin-bottom: 20px;
-    line-height: 1.2;
-    font-weight: 800;
-    letter-spacing: -0.5px;
+    white-space: nowrap;
 }
 
 .resources-page .hero-section p {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.8;
-    color: #b0b0b0;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
+    white-space: normal;
 }
