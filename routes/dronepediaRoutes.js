@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/resources', (req, res) => {
-    res.render('resources-main'); 
+router.get('/dronepedia', (req, res) => {
+    res.render('dronepedia'); 
 });
 
 module.exports = router;

@@ -471,3 +471,101 @@ body {
     margin: 0 auto;
     white-space: normal;
 }
+
+
+
+/* Resources-Use Case Page */
+.use-case-container {
+    padding: 140px 5% 80px;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.use-case-label {
+    font-size: 12px;
+    letter-spacing: 5px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.sub-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 15px;
+}
+
+.sub-nav a {
+    text-decoration: none;
+    color: #555;
+    font-size: 12px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.sub-nav a.active {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 13px;
+}
+
+.category-main-title {
+    font-size: 28px;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+    font-weight: 700;
+}
+
+.case-grid {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.case-card {
+    width: 400px;
+    text-align: left;
+}
+
+.case-image-box {
+    width: 100%;
+    height: 240px;
+    background: #111;
+    border: 1px solid #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.case-details h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    height: 50px;
+}
+
+.specs-mini-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.spec-group label {
+    display: block;
+    font-size: 10px;
+    color: #555;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.spec-group p {
+    font-size: 14px;
+    color: #ddd;
+    margin: 0;
+}
