@@ -8,6 +8,7 @@ const serviceRouter = require('./routes/serviceRoutes');
 const resourcesRoutes = require('./routes/resourcesRoutes');
 const usecaseRoutes = require('./routes/usecaseRoutes');
 const dronepediaRoutes = require('./routes/dronepediaRoutes');
+const aboutusRoutes = require('./routes/aboutusRoutes');
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -19,6 +20,7 @@ app.use('/', usecaseRoutes);
 app.use('/', dronepediaRoutes);
 app.use('/', resourcesRoutes);
 app.use('/', productRouter);
+app.use('/', aboutusRoutes);
 
 
 app.get('/*', (req, res) => {

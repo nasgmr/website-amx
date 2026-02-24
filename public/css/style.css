@@ -854,8 +854,33 @@ body {
     }
 }
 
-@media (max-width: 600px) {
-    .applications-grid {
-        grid-template-columns: 1fr;
-    }
+
+
+/* About Us - Main Page */
+.aboutus-main-page .hero-section {
+    height: calc(100vh - 160px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    text-align: center;
+    padding-top: 15vh;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.aboutus-main-page .hero-section h1 {
+    font-size: 46px;
+    max-width: 100%;
+    margin-bottom: 20px;
+    white-space: nowrap;
+}
+
+.aboutus-main-page .hero-section p {
+    font-size: 20px;
+    line-height: 1.8;
+    max-width: 1200px;
+    margin: 0 auto;
+    white-space: normal;
 }
