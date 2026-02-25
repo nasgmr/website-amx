@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio 2018 - AMX UAV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="homepage-body portfolio-page">
+
+    <%- include('partials/navbar') %>
+
+    <main class="portfolio-container">
+        <div class="portfolio-header">
+            <h1 class="category-main-title">PORTFOLIO</h1> 
+        </div>
+
+        <div class="timeline-nav">
+            <a href="/about-us/portfolio/2018" class="<%= active === '2018' ? 'active-year' : '' %>">2018</a>
+            <a href="/about-us/portfolio/2019" class="<%= active === '2019' ? 'active-year' : '' %>">2019</a>
+            <a href="/about-us/portfolio/2020" class="<%= active === '2020' ? 'active-year' : '' %>">2020</a>
+            <a href="/about-us/portfolio/2021" class="<%= active === '2021' ? 'active-year' : '' %>">2021</a>
+            <a href="/about-us/portfolio/2022" class="<%= active === '2022' ? 'active-year' : '' %>">2022</a>
+            <a href="/about-us/portfolio/2023" class="<%= active === '2023' ? 'active-year' : '' %>">2023</a>
+            <a href="/about-us/portfolio/2024" class="<%= active === '2024' ? 'active-year' : '' %>">2024</a>
+            <a href="/about-us/portfolio/2025" class="<%= active === '2025' ? 'active-year' : '' %>">2025</a>
+        </div>
+
+        <div class="portfolio-list">
+            <div class="portfolio-item">
+                <p>AMX SKX Upgrade and Modification, Indonesia, Badan Informasi Geospasial</p> 
+            </div>
+            <div class="portfolio-item">
+                <p>Joint Research VTOL Quad Tailsitter Modelling & Simulation, Indonesia, UGM Yogyakarta</p> 
+            </div>
+        </div>
+    </main>
+
+    <%- include('partials/footer') %>
+
+</body>
+</html>

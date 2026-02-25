@@ -1,4 +1,3 @@
-
 /* Reset n Body */
 * {
   margin: 0;
@@ -9,7 +8,22 @@
 body {
     position: relative;
     min-height: 100vh;
-    padding-bottom: 140px;
+    padding-bottom: 110px;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    transition: all 0.3s ease-in-out;
+    border-radius: 3px;
 }
 
 
@@ -19,19 +33,17 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: #000000;
-    padding: 20px 80px;
+    padding: 3px 50px;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-
-/* Navbar Menu */
 .nav-links {
     display: flex;
     list-style: none;
     align-items: center;
-    gap: 40px;
+    gap: 30px;
 }
 
 .nav-links li {
@@ -39,75 +51,83 @@ body {
 }
 
 .nav-links a, .dropbtn {
-    font-size: 28px; 
+    font-size: 22px;
+    font-weight: 500;
     color: #ffffff;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 12px 28px;
     display: block;
     transition: background-color 0.3s;
     border-radius: 8px;
 }
 
 .nav-links a:hover {
-  background-color: #8a8a8a;
-  color: #000000;
+    background-color: #8a8a8a;
+    color: #000000;
 }
 
+.navbar img {
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-bottom: 8px;
+    height: 85px;
+    width: auto;
+}
 
-/* Dropdown (Sub-Menu) */
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #8a8a8a;
-  min-width: 250px;
-  top: 100%;
-  left: 0;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.5);
-  overflow: hidden;
+    display: none;
+    position: absolute;
+    background-color: #8a8a8a;
+    min-width: 280px;
+    top: 100%;
+    left: 0;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.5);
+    overflow: hidden;
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+    display: block;
 }
 
 .dropdown-content a {
-  color: #000000;
-  padding: 12px 20px;
-  font-weight: 500;
-  margin: 4px;
-  border-radius: 6px;
+    color: #000000;
+    padding: 10px 15px;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 4px;
+    border-radius: 4px;
 }
 
 .dropdown-content a:hover {
-  background-color: #d1d1d1;
+    background-color: #d1d1d1;
 }
 
 .dropdown:hover .dropbtn {
-  background-color: #8a8a8a;
-  color: #000000;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+    background-color: #8a8a8a;
+    color: #000000;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
-
-/*Talk To Sales Button */
 .btn-sales {
-  font-size: 28px;
-  background-color: #FFDD00;
-  color: #000000;
-  text-decoration: none;
-  padding: 12px 28px;
-  border-radius: 6px;
-  transition: background-color 0.3s, transform 0.2s;
-  margin-right: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #FFDD00;
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-right: 20px;
 }
 
 .btn-sales:hover {
-  background-color: #C76300;
-  transform: scale(1.05);
+    background-color: #C76300;
+    transform: scale(1.05);
 }
+
 
 
 /* Homepage Hero Section */
@@ -127,17 +147,17 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 25vh;
+    padding-top: 35vh;
 }
 
 .hero-section h1 {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     letter-spacing: 2px;
 }
 
 .hero-section p {
     font-size: 22.5px;
-    margin-bottom: 30px;
+    margin-bottom: 23px;
 }
 
 .btn-learn-more {
@@ -146,7 +166,7 @@ body {
     color: #ffffff;
     text-decoration: none;
     border-radius: 9px;
-    font-size: 25px;
+    font-size: 21.5px;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -156,13 +176,14 @@ body {
 }
 
 
+
 /* Footer */
 .footer {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 120px;
+    height: 85px;
     z-index: 100;
     display: flex;
     justify-content: center;
@@ -183,6 +204,7 @@ body {
 .footer-right {
     margin: 5px 0;
 }
+
 
 
 /* SOCIAL MEDIA */
@@ -282,7 +304,6 @@ body {
     color: #000000;
 }
 
-/* How to Use Section */
 .drone-usage-section {
     margin-top: 100px;
     padding-top: 50px;
@@ -297,7 +318,7 @@ body {
 .usage-subtitle {
     text-align: center;
     font-size: 25px;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
     color: #ffffff;
 }
 
@@ -309,7 +330,7 @@ body {
 .usage-box {
     flex: 1;
     background-color: #1a1a1a;
-    padding: 30px;
+    padding: 25px;
     border-radius: 12px;
     border: 1px solid #333;
 }
@@ -319,7 +340,7 @@ body {
     margin-bottom: 20px;
     color: #ffffff;
     border-bottom: 2px solid #FFD700;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 .usage-box ul {
@@ -329,7 +350,7 @@ body {
 .usage-box li {
     font-size: 16px;
     line-height: 1.8;
-    margin-bottom: 12px;
+    margin-bottom: 5px;
     color: #cccccc;
 }
 
@@ -337,17 +358,17 @@ body {
 
 /* Services Page */
 .services-container {
-    padding: 80px 10vw;
+    padding: 50px 14vw;
     color: #ffffff;
     display: flex;
     flex-direction: column;
-    gap: 60px;
-    min-height: 70vh;
+    gap: 45px;
+    min-height: 100vh;
 }
 
 .service-block {
     background-color: rgba(26, 26, 26, 0.8);
-    padding: 40px;
+    padding: 28.5px;
     border-radius: 12px;
     border-left: 4px solid #FFD700;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -442,7 +463,6 @@ body {
 
 
 
-
 /* Resources-Main Page */
 .resources-page .hero-section {
     height: calc(100vh - 160px);
@@ -452,7 +472,7 @@ body {
     align-items: center;
     padding: 0 20px;
     text-align: center;
-    padding-top: 15vh;
+    padding-top: 28.5vh;
     box-sizing: border-box;
     overflow: hidden;
 }
@@ -499,7 +519,7 @@ body {
     font-size: 50px;
     letter-spacing: 3px;
     color: #ffffff;
-    margin-bottom: 100px;
+    margin-bottom: 32px;
     text-transform: uppercase;
 }
 
@@ -508,14 +528,14 @@ body {
     border: 4px solid #FFC000;
     border-radius: 8px;
     overflow: hidden;
-    margin-bottom: 70px;
+    margin-bottom: 143px;
 }
 
 .sub-nav a {
-    padding: 25px 40px;
+    padding: 15px 15px;
     color: #FFC000;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
     border-right: 1px solid #FFC000;
@@ -561,14 +581,14 @@ body {
 .project-title {
     font-size: 25px;
     color: #ffffff;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     text-align: left;
     font-weight: 500;
 }
 
 .case-image-placeholder {
     width: 100%;
-    height: 450px;
+    height: 375px;
     background-color: #d3d3d3;
     display: flex;
     justify-content: center;
@@ -576,7 +596,7 @@ body {
     color: #555;
     font-weight: bold;
     letter-spacing: 2px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .case-stats-grid {
@@ -618,29 +638,33 @@ body {
 .pdf-style-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    width: 100%;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: stretch;
 }
 
 .grid-col-left {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
 }
 
 .grid-col-right {
     display: flex;
     flex-direction: column;
+    gap: 30px;
 }
 
 .mode-card {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-top: 3px solid #FFC000;
-    border-radius: 0 0 8px 8px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;;
     text-align: left;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    height: 100%;
 }
 
 .auto-card {
@@ -649,33 +673,38 @@ body {
 
 .mode-img-box {
     width: 100%;
-    height: 220px;
-    background-color: #2a2a2a;
+    height: 300px;
+    padding: 20px;
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #777;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.01);
+
 }
 
 .auto-img-box {
-    flex-grow: 1; 
-    min-height: 250px;
+    max-width: 100%;
+    max-height: 400px;
+}
+
+.mode-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 .mode-info {
-    padding: 30px;
+    padding: 25px;
+    flex-grow: 1;
 }
 
 .mode-info h3 {
     color: #FFC000;
+    margin: 0 0 10px 0;
     font-size: 20px;
-    margin-bottom: 15px;
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .mode-info p {
@@ -696,7 +725,7 @@ body {
 }
 
 .drone-type-card {
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: #383838;
     border: 1px solid rgba(255, 192, 0, 0.2);
     border-top: 4px solid #FFC000;
     border-radius: 8px;
@@ -714,7 +743,7 @@ body {
 .drone-img-box {
     width: 100%;
     height: 200px;
-    background-color: #1a1a1a;
+    background-color: #555555;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -722,7 +751,7 @@ body {
     font-size: 14px;
     font-weight: bold;
     letter-spacing: 2px;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #1b1b1b;
 }
 
 .drone-info {
@@ -803,7 +832,7 @@ body {
 }
 
 .app-card {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: #383838;
     border-radius: 8px;
     overflow: hidden;
     display: flex;
@@ -820,7 +849,7 @@ body {
 .app-img-box {
     width: 100%;
     height: 180px;
-    background-color: #2a2a2a;
+    background-color: #555555;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -848,16 +877,10 @@ body {
     text-transform: capitalize;
 }
 
-@media (max-width: 900px) {
-    .applications-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 
 
 /* About Us - Main Page */
-.aboutus-main-page .hero-section {
+.aboutus-page .hero-section {
     height: calc(100vh - 160px);
     display: flex;
     flex-direction: column;
@@ -865,22 +888,325 @@ body {
     align-items: center;
     padding: 0 20px;
     text-align: center;
-    padding-top: 15vh;
+    padding-top: 28.5vh;
     box-sizing: border-box;
     overflow: hidden;
 }
 
-.aboutus-main-page .hero-section h1 {
+.aboutus-page .hero-section h1 {
     font-size: 46px;
     max-width: 100%;
     margin-bottom: 20px;
     white-space: nowrap;
 }
 
-.aboutus-main-page .hero-section p {
+.aboutus-page .hero-section p {
     font-size: 20px;
     line-height: 1.8;
     max-width: 1200px;
     margin: 0 auto;
     white-space: normal;
+}
+
+
+
+/* About Us - Business Scale Page */
+.scale-container {
+    padding-top: 70px;
+    padding-bottom: 35px;
+}
+
+.scale-header h1 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.scale-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.stat-box {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+    border-color: #FFC000;
+}
+
+.stat-box h2 {
+    color: #FFC000;
+    font-size: 48px;
+    margin: 0 0 10px 0;
+    font-family: 'Allerta Stencil', sans-serif;
+}
+
+.stat-box p {
+    color: #cccccc;
+    font-size: 16px;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.highlight-box {
+    border-bottom: 4px solid #FFC000;
+}
+
+
+
+/* About Us - Partners & Clients Page */
+.partners-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.partner-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 180px;
+}
+
+.partner-logo-box {
+    width: 180px;
+    height: 180px;
+    background-color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.partner-logo-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+
+.partner-card h3 {
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 'Allerta Stencil', sans-serif;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.partner-card:hover .partner-logo-box {
+    transform: translateY(-8px);
+    border-color: #FFC000;
+    box-shadow: 0 8px 15px rgba(255, 192, 0, 0.2);
+}
+
+.partner-card:hover .partner-logo-box img {
+    filter: grayscale(0%);
+}
+
+
+
+/* About Us - Portfolio */
+.portfolio-container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.portfolio-header h1 {
+    font-size: 36px;
+    margin-bottom: 60px;
+    text-align: center;
+    color: #ffffff;
+    letter-spacing: 2px;
+}
+
+.timeline-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+}
+
+.timeline-nav a {
+    color: #888888;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 5px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.timeline-nav a:hover {
+    color: #ffffff;
+    background-color: rgba(255, 192, 0, 0.1);
+}
+
+.timeline-nav a.active-year {
+    color: #FFC000;
+    background-color: rgba(255, 192, 0, 0.15);
+    border: 1px solid #FFC000;
+}
+
+.portfolio-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.portfolio-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid #FFC000;
+    padding: 20px 25px;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateX(10px);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.portfolio-item p {
+    color: #dddddd;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* Tambahan agar layar tidak bisa digeser ke kanan/kiri (Anti-Horizontal Scroll) */
+    body { padding-bottom: 180px; overflow-x: hidden; width: 100%; }
+
+    /* --- 1. NAVBAR & HAMBURGER MENU --- */
+    .navbar { flex-direction: row; flex-wrap: wrap; justify-content: space-between; padding: 15px 20px; position: relative; }
+    .navbar img { padding: 0; height: 40px; }
+    .menu-toggle { display: flex; margin-top: 5px; }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+    .nav-links, .nav-actions { display: none; width: 100%; flex-direction: column; text-align: center; padding-top: 15px; gap: 5px; }
+    .nav-links.active, .nav-actions.active { display: flex; }
+    .nav-links li { width: 100%; }
+    .nav-links a, .dropbtn { font-size: 15px; padding: 12px; }
+    .dropdown:hover .dropdown-content { display: none; } 
+    .dropdown-content.show-mobile { display: flex !important; } 
+    .dropdown-content { display: none; flex-direction: column; background-color: #2a2a2a; width: 100%; margin-top: 5px; border-radius: 8px; box-shadow: none; position: relative; }
+    .dropdown-content a { color: #ffffff; font-size: 13px; padding: 12px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); margin: 0; border-radius: 0; }
+    .dropdown-content a:last-child { border-bottom: none; border-radius: 0 0 8px 8px; }
+    .btn-sales { font-size: 15px; padding: 12px 20px; width: 100%; box-sizing: border-box; display: block; margin-top: 10px; }
+
+    /* --- 2. HERO SECTION ALL PAGES --- */
+    .resources-page .hero-section, .aboutus-page .hero-section, .hero-section { height: auto; min-height: 70vh; padding-top: 40px; padding-left: 20px; padding-right: 20px; overflow: visible; }
+    .hero-section h1, .resources-page .hero-section h1, .aboutus-page .hero-section h1 { font-size: 28px !important; white-space: normal; line-height: 1.3; }
+    .hero-section p, .resources-page .hero-section p, .aboutus-page .hero-section p { font-size: 16px; }
+
+    /* --- 3. PRODUCTS PAGE --- */
+    .products-container { padding: 40px 20px; }
+    .product-card, .product-card.row-reverse { flex-direction: column; gap: 20px; margin-bottom: 50px; }
+    .product-image-box { width: 100%; height: 250px; min-height: 250px; border-radius: 12px; }
+    .product-title, .usage-title { font-size: 26px !important; line-height: 1.3; margin-bottom: 15px; }
+    .product-info p { font-size: 15px; margin-bottom: 20px; }
+    .btn-learn-more-products { font-size: 16px; padding: 12px 0; width: 100%; text-align: center; display: block; box-sizing: border-box; }
+    .usage-options { flex-direction: column; gap: 20px; }
+
+    /* --- 4. SERVICES PAGE (OBAT ANTI KEPOTONG/OVERFLOW) --- */
+    .services-container { padding: 40px 20px; width: 100%; box-sizing: border-box; }
+    .service-card, .detail-container, .additional-info { width: 100%; box-sizing: border-box; padding: 20px; }
+    .service-card h2, .service-card h3, .service-title { 
+        font-size: 22px !important; 
+        word-wrap: break-word; /* Memaksa kata panjang seperti AUGMENTED/VIRTUAL turun ke bawah */
+        hyphens: auto;
+        line-height: 1.3;
+        white-space: normal;
+    }
+
+    /* --- 5. USE CASE PAGE (Stats Paksa 3 Kolom) --- */
+    .use-case-container { padding: 40px 20px; }
+    .use-case-label, .category-main-title { font-size: 24px !important; line-height: 1.3; text-align: center; margin-bottom: 15px; }
+    .use-case-header-section { margin-bottom: 20px; }
+    .project-title { font-size: 18px; text-align: center; margin-bottom: 10px; }
+    .sub-nav { flex-direction: column; border: 2px solid #FFC000; border-radius: 8px; margin-bottom: 30px; width: 100%; box-sizing: border-box; }
+    .sub-nav a { width: 100%; border-right: none; border-bottom: 1px solid rgba(255, 192, 0, 0.4); padding: 12px; font-size: 13px; box-sizing: border-box; }
+    .case-image-placeholder { height: 180px; margin-bottom: 15px; }
+    
+    .case-stats-grid { 
+        display: grid !important; 
+        grid-template-columns: repeat(3, 1fr) !important; /* Paksa membelah jadi 3 kolom rapat */
+        gap: 15px 5px; 
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .stat-item { text-align: center; padding: 0; }
+    .stat-item label { font-size: 10px; margin-bottom: 2px; display: block; opacity: 0.8; word-wrap: break-word;}
+    .stat-item span { font-size: 11px; display: block; font-weight: bold; word-wrap: break-word;}
+
+    /* --- 6. DRONEPEDIA PAGE --- */
+    .pdf-style-grid, .comparison-grid, .applications-grid { display: flex !important; flex-direction: column !important; gap: 25px; }
+    .grid-col-left, .grid-col-right { width: 100%; display: flex; flex-direction: column; gap: 25px; }
+    .mode-img-box, .auto-img-box { height: 220px; max-height: 220px; padding: 15px; }
+
+    /* --- 7. BUSINESS SCALE (2 Kolom Rapi) --- */
+    .scale-header h1 { font-size: 26px !important; line-height: 1.3; margin-bottom: 20px; }
+    .scale-stats-grid { 
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* Paksa 2 kolom sebelahan */
+        gap: 12px; 
+    }
+    .stat-box { padding: 15px 10px; display: flex; flex-direction: column; justify-content: center; }
+    .stat-box h2 { font-size: 22px; margin: 5px 0; }
+    .stat-box p { font-size: 11px; line-height: 1.2; }
+
+    /* --- 8. PORTFOLIO PAGE (Navbar Tahun Paksa 4 Kolom) --- */
+    .portfolio-container { padding: 40px 20px; }
+    .portfolio-header h1 { font-size: 26px !important; margin-bottom: 20px; }
+    .timeline-nav { 
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important; /* Jaminan Mutu: 4 kotak per baris */
+        gap: 8px; 
+        margin-bottom: 30px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .timeline-nav a {
+        width: 100%;
+        font-size: 13px;
+        padding: 8px 0;
+        text-align: center;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    /* --- 9. FOOTER --- */
+    .footer { flex-direction: column; height: auto; padding: 20px 10px; gap: 15px; text-align: center; }
+    .footer-left { align-items: center; }
 }
