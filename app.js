@@ -12,6 +12,7 @@ const aboutusRoutes = require('./routes/aboutusRoutes');
 const businessRoutes = require('./routes/businessRoutes');
 const partnersRoutes = require('./routes/partnersRoutes');
 const portfolioRoutes = require('./routes/portfolioRoutes');
+const articlesRoutes = require('./routes/articlesRoutes');
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -27,9 +28,9 @@ app.use('/', usecaseRoutes);
 app.use('/', dronepediaRoutes);
 app.use('/', resourcesRoutes);
 app.use('/', productRouter);
+app.use('/', articlesRoutes);
 
 app.get('/*', (req, res) => {
-    // Tambahkan URL yang sedang diakses di pesannya
     res.send(`Anda mengakses: ${req.url}. Tapi halaman ini ditangkap oleh Wildcard app.js`);
 });
 
