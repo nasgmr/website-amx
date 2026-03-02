@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +10,14 @@
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body class="homepage-body"> 
-    
     <%- include('partials/navbar') %>
 
     <main class="products-container">
         
-        <div class="use-case-header-section" style="text-align: center; margin-bottom: -20px;">
-            <h4 class="use-case-label">OUR PRODUCTS</h4>
+        <div class="products-header-section" style="text-align: center; margin-bottom: -20px;">
+            <h4 class="products-label">OUR PRODUCTS</h4>
             <nav class="sub-nav" style="justify-content: center; display: flex;">
                 <a href="/products/mapping" class="<%= active === 'mapping' ? 'active' : '' %>">MAPPING DRONE</a>
                 <a href="/products/education" class="<%= active === 'education' ? 'active' : '' %>">EDUCATION DRONE</a>
@@ -49,6 +50,7 @@
                         <li>AMX UAV ready to be your partner for UAV sales, operator training, and maintenance</li>
                     </ul>
                 </div>
+
                 <div class="usage-box">
                     <h3>Utilize AMX UAV Professional Services</h3>
                     <ul>
@@ -65,6 +67,6 @@
     </main>
 
     <%- include('partials/footer') %>
-
 </body>
+
 </html>
