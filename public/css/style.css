@@ -116,6 +116,7 @@ body {
     border-bottom-right-radius: 0;
 }
 
+
 .btn-sales {
     font-size: 22px;
     font-weight: bold;
@@ -244,6 +245,27 @@ body {
     color: #ffffff;
 }
 
+.products-header-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.products-label {
+    font-family: 'Allerta Stencil', sans-serif;
+    text-shadow:
+        0 0 10px  rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.5),
+        0 0 30px rgba(222, 215, 173, 0.375);
+    font-size: 50px;
+    letter-spacing: 3px;
+    color: #ffffff;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+}
+
 .product-card {
     display: flex;
     align-items: center;
@@ -291,6 +313,12 @@ body {
     color: #cccccc;
 }
 
+.product-buttons-container {
+    display: flex;
+    gap: 20px; 
+    flex-wrap: wrap; 
+}
+
 .btn-learn-more-products {
     background-color: #ffdd00;
     padding: 13px 22px;
@@ -305,6 +333,24 @@ body {
 }
 
 .btn-learn-more-products:hover {
+    background-color: #C76300;
+    color: #000000;
+}
+
+.btn-shop {
+    background-color: #ffdd00;
+    padding: 13px 22px;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 9px;
+    font-size: 25px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn-shop:hover {
     background-color: #C76300;
     color: #000000;
 }

@@ -3,17 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - AMX UAV</title>
+    <title>Mapping Drones - AMX UAV</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<body class="homepage-body"> <%- include('partials/navbar') %>
+<body class="homepage-body"> 
+    
+    <%- include('partials/navbar') %>
 
     <main class="products-container">
+        
+        <div class="products-header-section" style="text-align: center; margin-bottom: -20px;">
+            <h4 class="products-label">OUR PRODUCTS</h4>
+            <nav class="sub-nav" style="justify-content: center; display: flex;">
+                <a href="/products/mapping" class="<%= active === 'mapping' ? 'active' : '' %>">MAPPING DRONE</a>
+                <a href="/products/education" class="<%= active === 'education' ? 'active' : '' %>">EDUCATION DRONE</a>
+            </nav>
+        </div>
+
         <section class="product-list">
-            
             <div class="product-card">
                 <div class="product-image-box">
                     <p>FOTO PRODUK</p>
@@ -40,25 +50,11 @@
                     <a href="/products/vertic-xl" class="btn-learn-more-products">Click Here For More</a>
                 </div>
             </div>
-
-            <div class="product-card">
-                <div class="product-image-box">
-                    <p>FOTO PRODUK</p>
-                </div>
-                <div class="product-info">
-                    <h4 class="product-category">DIY Drone for Students & Hobbyist</h4>
-                    <h1 class="product-title glowing-text">QUBIT</h1>
-                    <p>Qubit is a mini quad copter type drone. Design for students (10 years+) and drone hobbyist. Perfect for learn how to build, coding, and operate a drone.</p>
-                    <a href="/products/qubit" class="btn-learn-more-products">Click Here For More</a>
-                </div>
-            </div>
-
         </section>
 
         <section class="drone-usage-section">
             <h1 class="usage-title glowing-text">HOW TO USE DRONE TECHNOLOGY?</h1>
             <p class="usage-subtitle">AMX UAV offer 2 options for using Drone technology:</p>
-
             <div class="usage-options">
                 <div class="usage-box">
                     <h3>Buy and Operate UAV/Drones Independently</h3>
@@ -68,7 +64,6 @@
                         <li>AMX UAV ready to be your partner for UAV sales, operator training, and maintenance</li>
                     </ul>
                 </div>
-
                 <div class="usage-box">
                     <h3>Utilize AMX UAV Professional Services</h3>
                     <ul>
@@ -82,7 +77,6 @@
                 </div>
             </div>
         </section>
-
     </main>
 
     <%- include('partials/footer') %>
