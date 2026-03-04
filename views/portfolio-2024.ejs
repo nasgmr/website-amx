@@ -10,10 +10,74 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const plane = document.getElementById("paperPlane");
+        if (!plane) return;
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const direction = urlParams.get('fly'); 
+
+        const isMobile = window.innerWidth <= 768;
+        
+        const flyRight = isMobile ? [
+            { transform: 'translate(-100px, 30px) rotate(15deg)', opacity: 1 },
+            { transform: 'translate(100vw, -50px) rotate(-5deg)', opacity: 0.5 }
+        ] : [
+            { transform: 'translate(-150px, 30px) rotate(15deg)', opacity: 0, offset: 0 },
+            { opacity: 1, offset: 0.1 },
+            { opacity: 1, offset: 0.9 },
+            { transform: 'translate(100vw, -50px) rotate(-5deg)', opacity: 0.5, offset: 1 }
+        ];
+
+        const flyLeft = isMobile ? [
+            { transform: 'translate(100vw, 30px) scaleX(-1) rotate(15deg)', opacity: 1 },
+            { transform: 'translate(-100px, -50px) scaleX(-1) rotate(-5deg)', opacity: 0.5 }
+        ] : [
+            { transform: 'translate(100vw, 30px) scaleX(-1) rotate(15deg)', opacity: 0, offset: 0 },
+            { opacity: 1, offset: 0.1 },
+            { opacity: 1, offset: 0.9 },
+            { transform: 'translate(-150px, -50px) scaleX(-1) rotate(-5deg)', opacity: 0.5, offset: 1 }
+        ];
+
+        const timing = { duration: 1500, easing: 'cubic-bezier(0.25, 1, 0.5, 1)', fill: 'forwards' };
+
+        setTimeout(() => {
+            if (direction === 'left') {
+                plane.animate(flyLeft, timing);
+            } else {
+                plane.animate(flyRight, timing); 
+            }
+        }, 50);
+
+        const currentYearMatch = window.location.pathname.match(/\/portfolio\/(\d{4})/);
+        const currentYear = currentYearMatch ? parseInt(currentYearMatch[1]) : 0;
+        const links = document.querySelectorAll('.timeline-nav a');
+
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); 
+                let targetHref = this.getAttribute('href').split('?')[0]; 
+                
+                const targetYearMatch = targetHref.match(/\/portfolio\/(\d{4})/);
+                const targetYear = targetYearMatch ? parseInt(targetYearMatch[1]) : 0;
+
+                let flyParam = 'right';
+                if (currentYear > 0 && targetYear > 0 && currentYear > targetYear) {
+                    flyParam = 'left';
+                }
+
+                window.location.href = targetHref + "?fly=" + flyParam;
+            });
+        });
+    });
+</script>
+
 <body class="homepage-body portfolio-page">
     <%- include('partials/navbar') %>
 
     <main class="portfolio-container">
+        <img src="/img/paper-plane.png" id="paperPlane" class="flying-plane" alt="Flying Plane">
 
         <div class="portfolio-header">
             <h1 class="category-main-title">PORTFOLIO</h1> 

@@ -1366,6 +1366,19 @@ body {
 
 
 
+/* PAPER PLANE ANIMATION - PORTFOLIO */
+.flying-plane {
+    position: fixed;
+    top: 40%;
+    left: 0;
+    width: 120px;
+    z-index: 999999;
+    pointer-events: none;
+    opacity: 0;
+}
+
+
+
 /* MOBILE VERSION */
 @media (max-width: 768px) {
 
@@ -2020,5 +2033,11 @@ body {
         margin: 0 !important; 
         line-height: 1.4 !important; 
         display: block !important; 
+    }
+
+
+    /* PAPER PLANE - ANIMATION MOBILE */
+    .flying-plane {
+        width: 70px;
     }
 }

@@ -10,10 +10,75 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const plane = document.getElementById("paperPlane");
+        if (!plane) return;
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const direction = urlParams.get('fly'); 
+
+        const isMobile = window.innerWidth <= 768;
+        
+        const flyRight = isMobile ? [
+            { transform: 'translate(-100px, 30px) rotate(15deg)', opacity: 1 },
+            { transform: 'translate(100vw, -50px) rotate(-5deg)', opacity: 0.5 }
+        ] : [
+            { transform: 'translate(-150px, 30px) rotate(15deg)', opacity: 0, offset: 0 },
+            { opacity: 1, offset: 0.1 },
+            { opacity: 1, offset: 0.9 },
+            { transform: 'translate(100vw, -50px) rotate(-5deg)', opacity: 0.5, offset: 1 }
+        ];
+
+        const flyLeft = isMobile ? [
+            { transform: 'translate(100vw, 30px) scaleX(-1) rotate(15deg)', opacity: 1 },
+            { transform: 'translate(-100px, -50px) scaleX(-1) rotate(-5deg)', opacity: 0.5 }
+        ] : [
+            { transform: 'translate(100vw, 30px) scaleX(-1) rotate(15deg)', opacity: 0, offset: 0 },
+            { opacity: 1, offset: 0.1 },
+            { opacity: 1, offset: 0.9 },
+            { transform: 'translate(-150px, -50px) scaleX(-1) rotate(-5deg)', opacity: 0.5, offset: 1 }
+        ];
+
+        const timing = { duration: 1500, easing: 'cubic-bezier(0.25, 1, 0.5, 1)', fill: 'forwards' };
+
+        setTimeout(() => {
+            if (direction === 'left') {
+                plane.animate(flyLeft, timing);
+            } else {
+                plane.animate(flyRight, timing); 
+            }
+        }, 50);
+
+        const order = ['how-it-works', 'classifications', 'applications'];
+        const currentPath = window.location.pathname.toLowerCase();
+        let currentIndex = order.findIndex(id => currentPath.includes(id));
+        if(currentIndex === -1) currentIndex = 0;
+
+        const links = document.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                let targetHref = this.getAttribute('href');
+                if(!targetHref) return;
+                
+                let cleanHref = targetHref.split('?')[0];
+                let targetIndex = order.findIndex(id => cleanHref.toLowerCase().includes(id));
+                
+                if (targetIndex !== -1 && cleanHref.includes('/dronepedia/')) {
+                    e.preventDefault();
+                    let flyParam = (targetIndex < currentIndex) ? 'left' : 'right';
+                    window.location.href = cleanHref + "?fly=" + flyParam;
+                }
+            });
+        });
+    });
+</script>
+
 <body class="homepage-body">
     <%- include('partials/navbar') %>
 
     <main class="use-case-container">
+        <img src="/img/paper-plane.png" id="paperPlane" class="flying-plane" alt="Flying Plane">
 
         <div class="use-case-header-section">
             <h4 class="use-case-label">DRONEPEDIA</h4>
