@@ -17,30 +17,17 @@
 
         const urlParams = new URLSearchParams(window.location.search);
         const direction = urlParams.get('fly'); 
-
         const isMobile = window.innerWidth <= 768;
-        
-        const flyRight = isMobile ? [
-            { transform: 'translate(-100px, 30px) rotate(15deg)', opacity: 1 },
-            { transform: 'translate(100vw, -50px) rotate(-5deg)', opacity: 0.5 }
-        ] : [
-            { transform: 'translate(-150px, 30px) rotate(15deg)', opacity: 0, offset: 0 },
-            { opacity: 1, offset: 0.1 },
-            { opacity: 1, offset: 0.9 },
-            { transform: 'translate(100vw, -50px) rotate(-5deg)', opacity: 0.5, offset: 1 }
-        ];
-
-        const flyLeft = isMobile ? [
-            { transform: 'translate(100vw, 30px) scaleX(-1) rotate(15deg)', opacity: 1 },
-            { transform: 'translate(-100px, -50px) scaleX(-1) rotate(-5deg)', opacity: 0.5 }
-        ] : [
-            { transform: 'translate(100vw, 30px) scaleX(-1) rotate(15deg)', opacity: 0, offset: 0 },
-            { opacity: 1, offset: 0.1 },
-            { opacity: 1, offset: 0.9 },
-            { transform: 'translate(-150px, -50px) scaleX(-1) rotate(-5deg)', opacity: 0.5, offset: 1 }
-        ];
-
         const timing = { duration: 1500, easing: 'cubic-bezier(0.25, 1, 0.5, 1)', fill: 'forwards' };
+
+        // 1. Animasi Pesawat
+        const flyRight = isMobile ? 
+            [{ transform: 'translate(-100px, 30px) rotate(15deg)', opacity: 1 }, { transform: 'translate(100vw, -50px) rotate(-5deg)', opacity: 0.5 }] : 
+            [{ transform: 'translate(-150px, 30px) rotate(15deg)', opacity: 0, offset: 0 }, { opacity: 1, offset: 0.1 }, { opacity: 1, offset: 0.9 }, { transform: 'translate(100vw, -50px) rotate(-5deg)', opacity: 0.5, offset: 1 }];
+
+        const flyLeft = isMobile ? 
+            [{ transform: 'translate(100vw, 30px) scaleX(-1) rotate(15deg)', opacity: 1 }, { transform: 'translate(-100px, -50px) scaleX(-1) rotate(-5deg)', opacity: 0.5 }] : 
+            [{ transform: 'translate(100vw, 30px) scaleX(-1) rotate(15deg)', opacity: 0, offset: 0 }, { opacity: 1, offset: 0.1 }, { opacity: 1, offset: 0.9 }, { transform: 'translate(-150px, -50px) scaleX(-1) rotate(-5deg)', opacity: 0.5, offset: 1 }];
 
         setTimeout(() => {
             if (direction === 'left') {
@@ -50,24 +37,42 @@
             }
         }, 50);
 
-        const currentYearMatch = window.location.pathname.match(/\/portfolio\/(\d{4})/);
-        const currentYear = currentYearMatch ? parseInt(currentYearMatch[1]) : 0;
-        const links = document.querySelectorAll('.timeline-nav a');
+        // 2. Animasi Seret Konten (HANYA LIST PROYEK)
+        const dragLeftAnim = [{ transform: 'translateX(100vw) scale(0.9) skewX(-5deg)', opacity: 0 }, { transform: 'translateX(-20px) scale(1.02) skewX(2deg)', opacity: 1, offset: 0.8 }, { transform: 'translateX(0) scale(1) skewX(0deg)', opacity: 1 }];
+        const dragRightAnim = [{ transform: 'translateX(-100vw) scale(0.9) skewX(5deg)', opacity: 0 }, { transform: 'translateX(20px) scale(1.02) skewX(-2deg)', opacity: 1, offset: 0.8 }, { transform: 'translateX(0) scale(1) skewX(0deg)', opacity: 1 }];
 
-        links.forEach(link => {
+        // SELEKTOR KHUSUS PORTFOLIO: Cuma narik list tahunnya
+        // Judul PORTFOLIO dan Timeline Nav bakal DIEM
+        const contentToAnimate = document.querySelectorAll(".portfolio-list");
+        
+        contentToAnimate.forEach(el => {
+            if (direction === 'left') {
+                el.animate(dragLeftAnim, timing);
+            } else if (direction === 'right') {
+                el.animate(dragRightAnim, timing);
+            }
+        });
+
+        // 3. Logika Navigasi Tahun Portfolio
+        const order = ['2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'];
+        const currentPath = window.location.pathname.toLowerCase();
+        let findIdx = order.findIndex(id => currentPath.includes(id));
+        let currentIndex = findIdx === -1 ? 0 : findIdx;
+
+        document.querySelectorAll('.timeline-nav a').forEach(link => {
             link.addEventListener('click', function(e) {
-                e.preventDefault(); 
-                let targetHref = this.getAttribute('href').split('?')[0]; 
-                
-                const targetYearMatch = targetHref.match(/\/portfolio\/(\d{4})/);
-                const targetYear = targetYearMatch ? parseInt(targetYearMatch[1]) : 0;
-
-                let flyParam = 'right';
-                if (currentYear > 0 && targetYear > 0 && currentYear > targetYear) {
-                    flyParam = 'left';
+                const targetHref = this.getAttribute('href');
+                if (targetHref && targetHref.includes('/portfolio/')) {
+                    e.preventDefault();
+                    const cleanHref = targetHref.split('?')[0];
+                    // Ambil angka tahun dari URL (misal: /portfolio/2024 -> 2024)
+                    const targetYearMatch = cleanHref.match(/\/portfolio\/(\d{4})/);
+                    const targetYear = targetYearMatch ? targetYearMatch[1] : null;
+                    const targetIndex = order.indexOf(targetYear);
+                    
+                    const flyParam = (targetIndex < currentIndex) ? 'left' : 'right';
+                    window.location.href = cleanHref + "?fly=" + flyParam;
                 }
-
-                window.location.href = targetHref + "?fly=" + flyParam;
             });
         });
     });
@@ -77,7 +82,7 @@
     <%- include('partials/navbar') %>
 
     <main class="portfolio-container">
-        <img src="/img/paper-plane.png" id="paperPlane" class="flying-plane" alt="Flying Plane">
+        <img src="/img/DRONE - ANIMATION.png" id="paperPlane" class="flying-plane" alt="Flying Plane">
 
         <div class="portfolio-header">
             <h1 class="category-main-title">PORTFOLIO</h1> 
