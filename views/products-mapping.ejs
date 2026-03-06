@@ -31,33 +31,37 @@
             [{ transform: 'translate(100vw, 30px) scaleX(-1) rotate(15deg)', opacity: 0, offset: 0 }, { opacity: 1, offset: 0.1 }, { opacity: 1, offset: 0.9 }, { transform: 'translate(-150px, -50px) scaleX(-1) rotate(-5deg)', opacity: 0.5, offset: 1 }];
 
         setTimeout(() => {
-            if (direction === 'left') {
-                plane.animate(flyLeft, timing);
-            } else {
-                plane.animate(flyRight, timing); 
-            }
+            direction === 'left' ? plane.animate(flyLeft, timing) : plane.animate(flyRight, timing);
         }, 50);
 
-        // 2. Animasi Seret Konten (TARGET DIKUNCI KE AREA BIRU)
-        const dragLeftAnim = [{ transform: 'translateX(100vw) scale(0.9) skewX(-5deg)', opacity: 0 }, { transform: 'translateX(-20px) scale(1.02) skewX(2deg)', opacity: 1, offset: 0.8 }, { transform: 'translateX(0) scale(1) skewX(0deg)', opacity: 1 }];
-        const dragRightAnim = [{ transform: 'translateX(-100vw) scale(0.9) skewX(5deg)', opacity: 0 }, { transform: 'translateX(20px) scale(1.02) skewX(-2deg)', opacity: 1, offset: 0.8 }, { transform: 'translateX(0) scale(1) skewX(0deg)', opacity: 1 }];
+        // 2. LOGIKA UTAMA (Sesuai Referensi Portfolio)
+        // Targetkan kontainer list produk
+        const contentContainers = document.querySelectorAll(".product-list");
+        const mainContent = contentContainers.length > 0 ? contentContainers[0] : null;
 
-        // Selektor ini hanya menargetkan list produk dan section bawah, bukan tag <main>
-        const contentToAnimate = document.querySelectorAll(".product-list, .drone-usage-section");
-        
-        contentToAnimate.forEach(el => {
-            if (direction === 'left') {
-                el.animate(dragLeftAnim, timing);
-            } else if (direction === 'right') {
-                el.animate(dragRightAnim, timing);
-            }
-        });
+        if (mainContent) {
+            const dragLeftAnim = [{ transform: 'translateX(100vw) scale(0.9) skewX(-5deg)', opacity: 0 }, { transform: 'translateX(-20px) scale(1.02) skewX(2deg)', opacity: 1, offset: 0.8 }, { transform: 'translateX(0) scale(1) skewX(0deg)', opacity: 1 }];
+            const dragRightAnim = [{ transform: 'translateX(-100vw) scale(0.9) skewX(5deg)', opacity: 0 }, { transform: 'translateX(20px) scale(1.02) skewX(-2deg)', opacity: 1, offset: 0.8 }, { transform: 'translateX(0) scale(1) skewX(0deg)', opacity: 1 }];
 
-        // 3. Logika Navigasi
+            // Daftarkan elemen yang mau digerakkan
+            // JANGAN masukkan .products-container agar judul dan navigasi tetap diam
+            const elementsToAnimate = document.querySelectorAll(".product-list, .drone-usage-section");
+            
+            elementsToAnimate.forEach(el => {
+                if (direction === 'left') {
+                    el.animate(dragLeftAnim, timing);
+                } else {
+                    // DEFAULT ANIMATION: Jalan saat diklik dari navbar (fly = null)
+                    el.animate(dragRightAnim, timing); 
+                }
+            });
+        }
+
+        // 3. Logika Navigasi Sub-Tab
         const order = ['mapping', 'education'];
         const currentPath = window.location.pathname.toLowerCase();
-        let findIdx = order.findIndex(id => currentPath.includes(id));
-        let currentIndex = findIdx === -1 ? 0 : findIdx;
+        let currentIndex = order.findIndex(id => currentPath.includes(id));
+        if(currentIndex === -1) currentIndex = 0;
 
         document.querySelectorAll('.sub-nav a').forEach(link => {
             link.addEventListener('click', function(e) {

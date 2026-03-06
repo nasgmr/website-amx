@@ -30,34 +30,36 @@
             [{ transform: 'translate(100vw, 30px) scaleX(-1) rotate(15deg)', opacity: 0, offset: 0 }, { opacity: 1, offset: 0.1 }, { opacity: 1, offset: 0.9 }, { transform: 'translate(-150px, -50px) scaleX(-1) rotate(-5deg)', opacity: 0.5, offset: 1 }];
 
         setTimeout(() => {
-            if (direction === 'left') {
-                plane.animate(flyLeft, timing);
-            } else {
-                plane.animate(flyRight, timing); 
-            }
+            direction === 'left' ? plane.animate(flyLeft, timing) : plane.animate(flyRight, timing);
         }, 50);
 
-        // 2. Animasi Seret Konten (HANYA LIST PROYEK)
-        const dragLeftAnim = [{ transform: 'translateX(100vw) scale(0.9) skewX(-5deg)', opacity: 0 }, { transform: 'translateX(-20px) scale(1.02) skewX(2deg)', opacity: 1, offset: 0.8 }, { transform: 'translateX(0) scale(1) skewX(0deg)', opacity: 1 }];
-        const dragRightAnim = [{ transform: 'translateX(-100vw) scale(0.9) skewX(5deg)', opacity: 0 }, { transform: 'translateX(20px) scale(1.02) skewX(-2deg)', opacity: 1, offset: 0.8 }, { transform: 'translateX(0) scale(1) skewX(0deg)', opacity: 1 }];
+        // 2. LOGIKA UTAMA (Yang sebelumnya "gaada" di file kamu)
+        // Cari kontainer portfolio-list
+        const contentContainers = document.querySelectorAll(".portfolio-list");
+        const mainContent = contentContainers.length > 0 ? contentContainers[0] : null;
 
-        // SELEKTOR KHUSUS PORTFOLIO: Cuma narik list tahunnya
-        // Judul PORTFOLIO dan Timeline Nav bakal DIEM
-        const contentToAnimate = document.querySelectorAll(".portfolio-list");
-        
-        contentToAnimate.forEach(el => {
-            if (direction === 'left') {
-                el.animate(dragLeftAnim, timing);
-            } else if (direction === 'right') {
-                el.animate(dragRightAnim, timing);
-            }
-        });
+        if (mainContent) {
+            const dragLeftAnim = [{ transform: 'translateX(100vw) scale(0.9) skewX(-5deg)', opacity: 0 }, { transform: 'translateX(-20px) scale(1.02) skewX(2deg)', opacity: 1, offset: 0.8 }, { transform: 'translateX(0) scale(1) skewX(0deg)', opacity: 1 }];
+            const dragRightAnim = [{ transform: 'translateX(-100vw) scale(0.9) skewX(5deg)', opacity: 0 }, { transform: 'translateX(20px) scale(1.02) skewX(-2deg)', opacity: 1, offset: 0.8 }, { transform: 'translateX(0) scale(1) skewX(0deg)', opacity: 1 }];
 
-        // 3. Logika Navigasi Tahun Portfolio
+            // Daftarkan elemen yang mau digerakkan (Judul Portfolio + List Proyek)
+            const elementsToAnimate = document.querySelectorAll(".portfolio-list");
+            
+            elementsToAnimate.forEach(el => {
+                if (direction === 'left') {
+                    el.animate(dragLeftAnim, timing);
+                } else {
+                    // DEFAULT ANIMATION: Ini yang bikin konten gerak pas diklik dari navbar atas (fly = null)
+                    el.animate(dragRightAnim, timing); 
+                }
+            });
+        }
+
+        // 3. Logika Navigasi Timeline
         const order = ['2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'];
         const currentPath = window.location.pathname.toLowerCase();
-        let findIdx = order.findIndex(id => currentPath.includes(id));
-        let currentIndex = findIdx === -1 ? 0 : findIdx;
+        let currentIndex = order.findIndex(id => currentPath.includes(id));
+        if(currentIndex === -1) currentIndex = 0;
 
         document.querySelectorAll('.timeline-nav a').forEach(link => {
             link.addEventListener('click', function(e) {
@@ -65,11 +67,9 @@
                 if (targetHref && targetHref.includes('/portfolio/')) {
                     e.preventDefault();
                     const cleanHref = targetHref.split('?')[0];
-                    // Ambil angka tahun dari URL (misal: /portfolio/2024 -> 2024)
                     const targetYearMatch = cleanHref.match(/\/portfolio\/(\d{4})/);
                     const targetYear = targetYearMatch ? targetYearMatch[1] : null;
                     const targetIndex = order.indexOf(targetYear);
-                    
                     const flyParam = (targetIndex < currentIndex) ? 'left' : 'right';
                     window.location.href = cleanHref + "?fly=" + flyParam;
                 }
