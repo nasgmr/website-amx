@@ -1238,6 +1238,17 @@ body {
     white-space: normal;
 }
 
+.aboutus-page .navbar-container {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent !important;
+    z-index: 1000;
+    border: none;
+}
+
+
 
 
 /* ABOUT US - BUSINESS SCALE OVERVIEW PAGE */
@@ -1433,6 +1444,47 @@ body {
 
 
 /* ABOUT US - ARTICLES PAGE */
+.aboutus-page .navbar-container {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent !important; /* Bikin transparan biar foto tembus */
+    z-index: 1000;
+    border: none;
+}
+
+.aboutus-page .article-hero-container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    width: 100%;
+    height: 300px; /* Atur tinggi hero desktop di sini */
+    overflow: hidden;
+}
+
+.aboutus-page .article-hero-bg {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #d3d3d3 0%, #4C4C4C 100%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 80px; /* Jarak teks "Article Title" dari atas */
+    
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+}
+
+.aboutus-page .article-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
 .articles-section {
     padding: 60px 20px;
     width: 100%;
@@ -1578,10 +1630,9 @@ body {
 
 
 /* ABOUT US - ARTICLES DETAILS PAGE */
-.article-hero-container {
-    position: relative;
-    width: 100%;
-    height: 480px;
+.aboutus-page .article-hero-container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
 }
 
 .article-hero-bg {
@@ -1800,6 +1851,7 @@ body {
     .hero-section p, .resources-page .hero-section p, .aboutus-page .hero-section p {
         font-size: 12.7px;
     }
+
 
 
     /* HOMEPAGE ADDITION */
@@ -2456,6 +2508,17 @@ body {
     
 
     /* ABOUT US - ARTICLES PAGE */
+    .aboutus-page .article-hero-container {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    .aboutus-page .article-hero-bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
     .articles-title {
         font-size: 32px;
         margin-bottom: 40px;
