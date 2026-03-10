@@ -1,5 +1,5 @@
 :root {
-    --primary-yellow: #FFDD00; /* Warna kuning yang sama dengan btn-sales kamu */
+    --primary-yellow: #FFDD00;
     --dark-grey: #4C4C4C;
     --card-gradient: linear-gradient(to right, #FFDD00, #FFFFFF);
 }
@@ -246,11 +246,16 @@ body {
 
 
 
-/* --- NEW HOME LAYOUT SECTIONS --- */
-/* --- HP GLOBALS --- */
+/* HOMEPAGE ADDITION */
+/* GLOBALS & GLOW */
 :root {
     --hp-yellow: #FFC000;
     --hp-black: #000000;
+}
+
+.glowing-text, .hp-section-title {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
 .hp-section-title {
@@ -260,123 +265,25 @@ body {
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-bottom: 60px;
-    
-    /* INI KUNCI EFEK GLOWING-NYA */
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
-                 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
-/* --- HP HIGHLIGHT: INFO KIRI, MEDIA KANAN (Scaled Down) --- */
-.hp-highlight-container {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    padding: 80px 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.hp-highlight-info { flex: 1; text-align: left; color: #ffffff}
-.hp-category-label { color: var(--hp-yellow); margin-bottom: 10px; font-size: 1.1rem; }
-.hp-main-title { font-size: 2.8rem; color: #fff; margin-bottom: 20px; }
-.hp-feature-list { list-style: none; padding: 0; margin-top: 25px;}
-.hp-feature-list li { margin-bottom: 12px; color: #eee; display: flex; align-items: center; gap: 10px; font-size: 0.9rem; }
-.hp-feature-list i { color: #3498db; }
-
-.hp-highlight-media { flex: 1.1; display: flex; flex-direction: column; align-items: center; gap: 20px; }
-.hp-placeholder-box { width: 100%; height: 350px; background: #c4c4c4; border-radius: 12px; display: flex; justify-content: center; align-items: center; font-weight: bold; color: #000; font-size: 1.2rem; }
-.hp-btn-see-more { background: var(--hp-yellow); color: #000; padding: 12px 40px; border-radius: 6px; text-decoration: none; font-weight: bold; }
-
-.hp-video-section {
-    width: 100%; /* Pastikan section mengambil lebar penuh layar */
-    display: flex;
-    justify-content: center; /* Centering horisontal */
-    align-items: center; /* Centering vertikal jika ada tinggi sisa */
-    padding: 80px 0; /* Memberi jarak atas dan bawah */
-    background-color: #4C4C4C; /* Warna background body kamu */
-}
-
-.hp-video-wrapper {
-    width: 80%; /* Lebar video 80% dari lebar layar agar tidak terlalu kecil */
-    max-width: 1000px; /* Batas lebar maksimal di layar besar */
-    aspect-ratio: 16 / 9; /* Menjaga proporsi video tetap standar TV/Monitor */
-    background-color: #000;
-    border: 2px solid #555; /* Border tipis seperti di desain */
-    box-shadow: 0 15px 40px rgba(0,0,0,0.4); /* Efek bayangan biar lebih "pop out" */
-    overflow: hidden;
+/* SEE MORE BUTTON */
+.btn-see-more-yellow {
+    background-color: var(--hp-yellow);
+    color: var(--hp-black);
+    padding: 12px 40px;
     border-radius: 8px;
-}
-
-.hp-video-wrapper iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-/* --- HP ARTICLES: SINGLE FLEX COLUMN (KARTU GRADASI) --- */
-.hp-articles-section {
-    padding: 80px 5%;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.hp-articles-list {
-    display: flex;
-    flex-direction: column; /* Semua artikel numpuk ke bawah */
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.hp-card-list {
-    display: flex; /* Row direction: Teks kiri, Gambar kanan */
-    background: linear-gradient(to right, var(--hp-yellow) 45%, #ffffff 100%); /* Gradasi kuning ke putih */
-    border-radius: 15px;
-    overflow: hidden;
-    min-height: 220px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-.hp-card-list-text {
-    flex: 1.4;
-    padding: 30px;
-    text-align: left;
-    color: var(--hp-black); /* Teks hitam agar kebaca di kuning */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.hp-article-title { font-size: 1.8rem; margin-bottom: 8px; font-weight: bold; }
-.hp-meta { display: flex; gap: 15px; font-size: 11px; margin-bottom: 15px; font-weight: 500; color: #444; }
-.hp-excerpt { font-size: 1rem; line-height: 1.5; margin-bottom: 20px; color: #333; }
-
-/* Tombol Baca Selengkapnya Hitam */
-.hp-btn-read {
-    background-color: var(--hp-black); /* Tombol hitam */
-    color: #fff;
-    padding: 10px 22px;
-    border-radius: 6px;
     text-decoration: none;
-    font-size: 0.9rem;
     font-weight: bold;
     display: inline-block;
-    width: fit-content;
-    transition: transform 0.2s ease-in-out;
-}
-.hp-btn-read:hover { transform: scale(1.05); }
-
-/* Bagian Gambar dengan Efek Fading */
-.hp-card-list-img {
-    flex: 1;
-    background-color: #fff;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 
-.hp-card-list-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    -webkit-mask-image: linear-gradient(to left, black 75%, transparent 100%);
-    mask-image: linear-gradient(to left, black 75%, transparent 100%);
+.btn-see-more-yellow:hover {
+    transform: scale(1.05);
+    background-color: #e6ac00;
 }
 
 .hp-action-center {
@@ -384,52 +291,233 @@ body {
     margin-top: 40px;
 }
 
-/* --- HP GALLERY: SMALLER BOX SIZES --- */
+/* PRODUCT HIGHLIGHT */
+.hp-highlight-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 50px;
+    padding: 80px 5% 20px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hp-title-wrapper {
+    width: 100%;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.hp-highlight-info {
+    flex: 1;
+    text-align: left;
+    color: #ffffff;
+}
+
+.hp-category-label {
+    color: var(--hp-yellow);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.hp-main-title {
+    font-size: 2.8rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.hp-feature-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+}
+
+.hp-feature-list li {
+    margin-bottom: 12px;
+    color: #eee;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+.hp-feature-list i {
+    color: #3498db;
+}
+
+.hp-highlight-media {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.hp-placeholder-box {
+    width: 100%;
+    height: 350px;
+    background: #c4c4c4;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #000;
+}
+
+.hp-btn-see-more {
+    background: var(--hp-yellow);
+    color: #000;
+    padding: 12px 40px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* YOUTUBE */
+.hp-video-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 80px 0;
+    background-color: #4C4C4C;
+}
+.hp-video-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+    border: 2px solid #555;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+.hp-video-wrapper iframe { 
+    width: 100%; 
+    height: 100%; 
+    border: none; 
+    display: block;
+}
+
+/* ARTICLES */
+.hp-articles-section {
+    padding: 80px 5%; 
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.hp-card-list {
+    display: flex;
+    background: linear-gradient(90deg, var(--hp-yellow) 0%, var(--hp-yellow) 55%, #ffffff 100%);
+    border-radius: 15px;
+    overflow: hidden;
+    min-height: 200px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.hp-card-list-text {
+    flex: 1.3;
+    padding: 30px;
+    color: #000;
+    z-index: 2;
+}
+
+.hp-card-list-img {
+    flex: 1;
+    background: transparent;
+    position: relative;
+}
+
+.hp-card-list-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 35%);
+    mask-image: linear-gradient(to right, transparent 0%, black 35%);
+}
+
+.hp-btn-read {
+    background-color: #000;
+    color: #FFFFFF;
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+/* GALLERY */
 .hp-gallery-container {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 40px;
-    padding-bottom: 100px;
+    padding: 40px 0 120px 0;
+    position: relative;
+    width: 100%;
 }
 
-.hp-gallery-frames {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.hp-frame {
-    background: #D9D9D9;
-    border-radius: 12px;
-    overflow: hidden;
+.hp-gallery-track {
+    position: relative;
+    width: 850px;
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.hp-frame img { width: 100%; height: 100%; object-fit: cover; }
-
-/* Ukuran Frame Samping (Kecil) */
-.hp-side {
-    width: 240px; /* Diperkecil dari 280 */
-    height: 320px; /* Diperkecil dari 380 */
-    opacity: 0.5;
+.hp-frame {
+    position: absolute;
+    background: #D9D9D9;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Ukuran Frame Tengah (Besar) */
-.hp-center {
-    width: 380px; /* Diperkecil dari 450 */
-    height: 460px; /* Diperkecil dari 550 */
-    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-    z-index: 5;
+.hp-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Navigasi Panah Kuning */
+.pos-left {
+    left: 0;
+    width: 350px; height: 200px; 
+    opacity: 0.4;
+    transform: scale(0.9);
+    z-index: 1;
+}
+
+.pos-center {
+    left: 50%;
+    transform: translateX(-50%) scale(1.15);
+    width: 400px; height: 275px; 
+    opacity: 1;
+    z-index: 10;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.pos-right {
+    left: 100%;
+    transform: translateX(-100%) scale(0.9);
+    width: 350px; height: 200px; 
+    opacity: 0.4;
+    z-index: 1;
+}
+
 .hp-arrow {
     font-size: 5rem;
     color: var(--hp-yellow);
     cursor: pointer;
+    z-index: 20;
+    transition: transform 0.2s;
+}
+
+.hp-arrow:hover {
+    transform: scale(1.2);
 }
 
 
@@ -1713,6 +1801,227 @@ body {
         font-size: 12.7px;
     }
 
+
+    /* HOMEPAGE ADDITION */
+    .hp-section-title {
+        font-size: 28px;
+        margin-bottom: 20px;
+        padding: 0 20px;
+    }
+
+    .hp-mobile-title-area {
+        text-align: center;
+    }
+
+    .hp-highlight-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        padding: 30px 20px 10px 20px;
+    }
+
+    .hp-title-wrapper {
+        order: 1;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .hp-highlight-media {
+        order: 2; 
+        width: 100%;
+        margin-bottom: 30px;
+        border-radius: 12px;
+    }
+
+    .hp-highlight-info {
+        order: 3;
+        padding: 0 30px;
+    }
+
+    .hp-video-section {
+        padding: 30px 20px 60px 20px; 
+    }
+
+    .hp-main-title {
+        font-size: 2.1rem;
+        line-height: 1.2;
+    }
+
+    .hp-main-desc {
+        text-align: justify;
+        margin-bottom: 25px;
+        line-height: 1.6;
+    }
+
+    .hp-feature-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hp-feature-list li {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: justify;
+        gap: 12px;
+        font-size: 0.88rem;
+    }
+
+    .hp-placeholder-box {
+        width: 100%;
+        height: 260px;
+        border-radius: 0;
+    }
+
+    .hp-btn-footer-mobile {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .hp-btn-see-more {
+        display: inline-block;
+        width: 85%;
+        padding: 14px 0;
+        background-color: var(--hp-yellow);
+        color: #000;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-radius: 8px;
+        text-decoration: none;
+    }
+
+    .hp-card-list {
+        display: flex;
+        flex-direction: column; /* Menumpuk elemen secara vertikal */
+        min-height: auto;
+        /* Gradasi dibalik: Putih di atas (area foto), Kuning di bawah (area teks) */
+        background: linear-gradient(180deg, #ffffff 0%, var(--hp-yellow) 40%);
+        border-radius: 15px;
+        overflow: hidden;
+        margin-top: 30px;
+    }
+
+    .hp-card-list-img {
+        order: 1; /* PAKSA FOTO KE ATAS */
+        height: 200px; /* Atur tinggi foto agar pas */
+        width: 100%;
+    }
+
+    .hp-card-list-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Fading Vertikal: Pudar di bagian bawah foto agar menyatu dengan teks */
+        -webkit-mask-image: linear-gradient(to top, transparent 0%, black 25%);
+        mask-image: linear-gradient(to top, transparent 0%, black 25%);
+    }
+
+    .hp-card-list-text {
+        order: 2; /* PAKSA TEKS KE BAWAH */
+        padding: 25px;
+        text-align: center;
+        background-color: transparent; /* Biar warna kuning dari parent kelihatan */
+    }
+
+    .hp-btn-read {
+        margin: 15px auto 0 auto;
+    }
+
+    .hp-card-list-img {
+        height: 180px;
+        width: 100%;
+    }
+
+    .hp-card-list-img img {
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 30%);
+        mask-image: linear-gradient(to bottom, transparent 0%, black 30%);
+    }
+
+    .hp-section-title {
+        margin-bottom: 5px;
+        padding: 0 20px;
+    }
+
+    .hp-gallery-section {
+        padding: 10px 0 60px 0; /* Perkecil jarak atas agar tidak melompong */
+    }
+
+    .hp-gallery-container {
+        position: relative; /* WAJIB: Agar panah absolute tetap berada di dalam area ini */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 15px;
+        padding-bottom: 40px;
+    }
+
+    /* Track harus lebih tinggi karena frame kita sekarang portrait */
+    .hp-gallery-track {
+        width: 100%;
+        height: 380px; /* Tinggi ditambah untuk menampung frame portrait */
+        position: relative;
+    }
+
+    .hp-frame {
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    /* --- POSISI SWEEPING 3:4 PORTRAIT --- */
+
+    /* Samping Kiri */
+    .pos-left {
+        width: 150px; 
+        height: 200px; /* Rasio 3:4 */
+        left: -20%; /* "Mengintip" dari kiri */
+        opacity: 0.3;
+        transform: scale(0.8);
+        z-index: 1;
+    }
+
+    /* Tengah (Fokus Utama) */
+    .pos-center {
+        width: 300px; 
+        height: 350px; /* Rasio 3:4 (260 * 4/3) */
+        left: 50%;
+        transform: translateX(-50%) scale(1.05);
+        opacity: 1;
+        z-index: 10;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    }
+
+    /* Samping Kanan */
+    .pos-right {
+        width: 150px; 
+        height: 200px; /* Rasio 3:4 */
+        left: 120%; 
+        transform: translateX(-100%) scale(0.8);
+        opacity: 0.3;
+        z-index: 1;
+    }
+
+    #prevBtn {
+        left: 15px; /* Geser masuk dari kiri */
+    }
+
+    #nextBtn {
+        right: 15px;
+    }
+
+    .hp-arrow {
+        position: absolute; /* KUNCI: Biar panah bisa digeser masuk melewati batas track */
+        top: 50%;           /* Posisikan di tengah secara vertikal */
+        transform: translateY(-50%); /* Penyesuaian agar benar-benar di titik tengah */
+        font-size: 3.5rem;
+        color: var(--hp-yellow);
+        z-index: 30;        /* Pastikan panah berada di atas foto */
+        opacity: 0.9;
+        text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    
 
     /* PRODUCTS PAGE */
     .products-container {

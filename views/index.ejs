@@ -13,7 +13,7 @@
     <%- include('partials/navbar') %>
 
     <main class="hero-section">
-        <h1>DRONE SOLUTION FOR INDUSTRY 5.0</h1>
+        <h1 class="glowing-text">DRONE SOLUTION FOR INDUSTRY 5.0</h1>
         <p>AMX UAV offer mapping drone and services for various industry</p>
         <a href="https://drive.google.com/file/d/1APSnKeG_bUYtVmAfQr0WhkKxK9-ws2O9/view?usp=sharing" target="_blank" class="btn-learn-more">Learn More</a>
         <div class="social-icons">
@@ -25,53 +25,56 @@
     </main>
 
     <section class="hp-product-highlight">
-        <div class="hp-highlight-container">
-            <div class="hp-highlight-info">
-                <h4 class="hp-category-label">Compact eVTOL Drone</h4>
-                <h1 class="hp-main-title glowing-text">VERTIC AIR</h1>
-                <p class="hp-main-desc">
-                    Vertic Air is easy to control, fully autonomous, and capable to operate from narrow vertical take off-landing (VTOL) mapping drone. Vertic air is ready for various application such as agriculture, asset monitoring, construction & engineering planning, and military surveillance.
-                </p>
-                <ul class="hp-feature-list">
-                    <li><i class="fas fa-check-circle"></i> Vertical Take-Off Landing</li>
-                    <li><i class="fas fa-check-circle"></i> Fully autonomous mission</li>
-                    <li><i class="fas fa-check-circle"></i> 60+ minutes flight time</li>
-                    <li><i class="fas fa-check-circle"></i> Light and strong composite material</li>
-                </ul>
-            </div>
+    <div class="hp-highlight-container">
+        <div class="hp-mobile-title-area">
+            <h4 class="hp-category-label">Compact eVTOL Drone</h4>
+            <h1 class="hp-main-title glowing-text">VERTIC AIR</h1>
+        </div>
 
-            <div class="hp-highlight-media">
-                <div class="hp-placeholder-box">
-                    <span>FOTO PRODUK VERTIC AIR</span>
-                </div>
-                <a href="/products" class="hp-btn-see-more">See More</a>
+        <div class="hp-highlight-media">
+            <div class="hp-placeholder-box">
+                <span>FOTO PRODUK VERTIC AIR</span>
             </div>
         </div>
+
+        <div class="hp-highlight-info">
+            <p class="hp-main-desc">
+                Vertic Air is easy to control, fully autonomous, and capable to operate from narrow vertical take off-landing (VTOL) mapping drone.
+            </p>
+            <ul class="hp-feature-list">
+                <li><i class="fas fa-check-circle"></i> Vertical Take-Off Landing</li>
+                <li><i class="fas fa-check-circle"></i> Fully autonomous mission</li>
+                <li><i class="fas fa-check-circle"></i> 40 minutes flight time</li>
+                <li><i class="fas fa-check-circle"></i> Wind Resist 14m/s (fixed wing) & 9m/s (copter)</li>
+                <li><i class="fas fa-check-circle"></i> Light and Strong Composites Material</li>
+                <li><i class="fas fa-check-circle"></i> PPK Ready</li>
+                <li><i class="fas fa-check-circle"></i> RGB and Multispectral Camera Payload</li>
+            </ul>
+            
+            <div class="hp-btn-footer-mobile">
+                <a href="/products/vertic-air" class="hp-btn-see-more">See More</a>
+            </div>
+        </div>
+    </div>
     </section>
 
     <section class="hp-video-section">
         <div class="hp-video-wrapper">
-            <iframe src="https://www.youtube-nocookie.com/embed/jQkANpci7Aw" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/jQkANpci7Aw?rel=0" frameborder="0" allowfullscreen></iframe>
         </div>
     </section>
 
     <section class="hp-articles-section">
-        <h1 class="hp-section-title">LATEST ARTICLES</h1>
+        <h1 class="hp-section-title glowing-text">LATEST ARTICLES</h1>
         <div class="hp-articles-list">
             <% for(let i=1; i<=3; i++) { %>
             <div class="hp-card-list">
                 <div class="hp-card-list-text">
                     <h3 class="hp-article-title">Title Article <%= i %></h3>
-                    <div class="hp-meta">
-                        <span><i class="fas fa-user"></i> AMX UAV</span>
-                        <span><i class="fas fa-calendar"></i> Released Date</span>
-                    </div>
-                    <p class="hp-excerpt">Brief information of the article contentthat makes users interested in reading more.</p>
-                    <a href="#" class="hp-btn-read">Read More</a>
+                    <p class="hp-excerpt">Brief information of the article content that makes users interested in reading more.</p>
+                    <a href="/about-us/articles/detail" class="hp-btn-read">Read More</a>
                 </div>
-                <div class="hp-card-list-img">
-                    <img src="/img/article-sample-<%= i %>.jpg" alt="">
-                </div>
+                <div class="hp-card-list-img"><img src="/img/AMX-GCS.jpg" alt=""></div>
             </div>
             <% } %>
         </div>
@@ -81,20 +84,49 @@
     </section>
 
     <section class="hp-gallery-section">
-    <h1 class="hp-section-title">OUR GALLERY</h1>
+        <h1 class="hp-section-title glowing-text">OUR GALLERY</h1>
         <div class="hp-gallery-container">
             <div class="hp-arrow" id="prevBtn"><i class="fas fa-caret-left"></i></div>
             
-            <div class="hp-gallery-frames" id="gallery-track">
-                <div class="hp-frame hp-side" id="frame-left"><img src="/img/gall-1.jpg"></div>
-                <div class="hp-frame hp-center" id="frame-center"><img src="/img/gall-2.jpg"></div>
-                <div class="hp-frame hp-side" id="frame-right"><img src="/img/gall-3.jpg"></div>
+            <div class="hp-gallery-track">
+                <div class="hp-frame hp-slider-node pos-left"><img src="/img/Use Case - Land Use.png"></div>
+                <div class="hp-frame hp-slider-node pos-center"><img src="/img/Use Case - Soil Moisture.png"></div>
+                <div class="hp-frame hp-slider-node pos-right"><img src="/img/Use Case - Irrigation Modelling.png"></div>
             </div>
 
             <div class="hp-arrow" id="nextBtn"><i class="fas fa-caret-right"></i></div>
-    </div>
+        </div>
     </section>
 
     <%- include('partials/footer') %>
+
+    <script>
+        const nodes = document.querySelectorAll('.hp-slider-node');
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+
+        let currentClasses = ['pos-left', 'pos-center', 'pos-right'];
+
+        function applyRotation() {
+            nodes.forEach((node, i) => {
+                node.classList.remove('pos-left', 'pos-center', 'pos-right');
+                node.classList.add(currentClasses[i]);
+            });
+        }
+
+        if(nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                currentClasses.unshift(currentClasses.pop());
+                applyRotation();
+            });
+        }
+
+        if(prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                currentClasses.push(currentClasses.shift());
+                applyRotation();
+            });
+        }
+    </script>
 </body>
 </html>
