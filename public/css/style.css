@@ -1449,7 +1449,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: transparent !important; /* Bikin transparan biar foto tembus */
+    background: transparent !important;
     z-index: 1000;
     border: none;
 }
@@ -1458,7 +1458,7 @@ body {
     margin-top: 0 !important;
     padding-top: 0 !important;
     width: 100%;
-    height: 300px; /* Atur tinggi hero desktop di sini */
+    height: 300px;
     overflow: hidden;
 }
 
@@ -1469,7 +1469,7 @@ body {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    padding-top: 80px; /* Jarak teks "Article Title" dari atas */
+    padding-top: 80px;
     
     -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
     mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
@@ -1555,20 +1555,21 @@ body {
 }
 
 .list-card {
-    background: linear-gradient(to right, #FFC000 0%, #FFC000 45%, #ffffff 85%, #ffffff 100%);
+    background: linear-gradient(to right, #FFC000 0%, #FFC000 55%, #ffffff 100%);
     border-radius: 12px;
-    padding: 20px 25px;
+    /* KUNCI: Padding dinolkan agar foto bisa "fit" sampai ke pinggir */
+    padding: 0 !important; 
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    box-sizing: border-box;
+    align-items: stretch; /* Memaksa foto setinggi kartu */
+    overflow: hidden; /* Penting: Biar sudut foto ikut melengkung sesuai kartu */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-height: 220px;
 }
 
 .list-card-content { 
-    flex: 1; 
-    padding-right: 20px; 
+    flex: 1.2; /* Beri ruang teks lebih lebar sedikit */
+    padding: 30px; /* Padding dipindah ke sini agar teks tetap rapi */
 }
 
 .list-card-content h3 { 
@@ -1578,12 +1579,20 @@ body {
 }
 
 .list-card-image {
-    width: 160px;
-    text-align: center;
-    color: #1a1a1a;
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 1.4;
+    flex: 1; /* Biar ukurannya fleksibel mengisi sisa ruang */
+    width: auto !important; /* Hapus lebar statis 300px agar lebih fit */
+    height: auto;
+    background: transparent;
+}
+
+.list-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* Efek fading menyatu ke area kuning */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 40%);
+    mask-image: linear-gradient(to right, transparent 0%, black 40%);
 }
 
 .article-meta { 
@@ -2532,26 +2541,37 @@ body {
         text-align: center;
     }
     .list-card {
-        flex-direction: column; 
+        display: flex !important;
+        flex-direction: column !important; 
         text-align: center;
         background: #FFC000; 
+        padding: 0 !important; /* Hapus padding agar foto mepet pinggir layar */
+        overflow: hidden;
     }
     .list-card-content {
-        padding-right: 0;
-        margin-bottom: 20px;
+        order: 2 !important;
+        padding: 25px;
+        margin-bottom: 0;
     }
     .article-meta {
         justify-content: center; 
     }
     .list-card-image {
-        width: 100%; 
-        height: 150px;
-        background-color: #ffffff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 8px;
+        order: 1 !important;
+        background-color: transparent !important; 
+        width: 100%;
+        height: 200px;
+        margin-top: 0;
     }
+    .list-card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        -webkit-mask-image: linear-gradient(to top, transparent 0%, black 35%);
+        mask-image: linear-gradient(to top, transparent 0%, black 35%);
+    }
+
 
 
     /* FOOTER */
