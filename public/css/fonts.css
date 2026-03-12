@@ -1,45 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Encode+Sans+Semi+Condensed:wght@600&family=Overpass:wght@300;400;500&family=Poppins:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Encode+Sans+Semi+Condensed:wght@600&family=Orbitron:wght@700&family=Overpass:wght@300;400;500&family=Plus+Jakarta+Sans:wght@500&family=Poppins:wght@300;400;500&family=Readex+Pro:wght@500&family=Zen+Dots&display=swap');
 
 body {
-    font-family: 'Overpass', sans-serif; /* Default Font */
+    font-family: 'Plus Jakarta Sans', sans-serif; /* Default Font */
 }
-
 
 /* Typography */
 h1 {
-    font-family: 'Audiowide', cursive;
+    font-family: 'Orbitron', sans-serif;
     font-size: 45px;
-    font-weight: 400;
+    font-weight: 700;
     text-shadow:
-        0 0 10px  rgba(255, 255, 255, 0.8),
-        0 0 20px rgba(255, 255, 255, 0.5),
-        0 0 30px rgba(222, 215, 173, 0.375)
+        0 0 10px rgba(255, 255, 255, 0.8), 
+        0 0 20px rgba(255, 255, 255, 0.5);
 }
 
 h2 {
-    font-family: 'Overpass', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 45px;
     font-weight: 500;
 }
 
 h3 {
-    font-family: 'Overpass', sans-serif;
+    font-family: 'Zen Dots', cursive;
     font-size: 40px;
     font-weight: 400;
 }
 
 h4 {
-    font-family: 'Overpass', sans-serif;
+    font-family: 'Readex Pro', sans-serif;
     font-size: 35px;
-    font-weight: 300;
+    font-weight: 500;
 }
 
-h5 {
-    font-family: 'Overpass', sans-serif;
-    font-size: 30px;
-    font-weight: 300;
-}
 
 .copyright-text {
     font-family: 'Poppins', sans-serif;
@@ -62,6 +54,20 @@ h5 {
     font-weight: 400;
 }
 
-.nav-links a, .dropbtn, .btn-sales, .dropdown-content a, .btn-learn-more {
+.nav-links a, .dropbtn, .dropdown-content a, .btn-learn-more {
     font-family: 'Encode Sans Semi Condensed', sans-serif;
+}
+
+.btn-learn-more, 
+.btn-learn-more-products, 
+.btn-shop, 
+.btn-read-more, 
+.hp-btn-read, 
+.btn-see-more-yellow, 
+.btn-sales,
+.hp-btn-see-more {
+    font-family: 'Readex Pro', sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 500; /* Medium sesuai request lu */
+    text-transform: uppercase; /* Opsional: biar makin tegas */
 }
