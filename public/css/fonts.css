@@ -1,33 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Encode+Sans+Semi+Condensed:wght@600&family=Orbitron:wght@700&family=Overpass:wght@300;400;500&family=Plus+Jakarta+Sans:wght@500&family=Poppins:wght@300;400;500&family=Readex+Pro:wght@500&family=Zen+Dots&display=swap');
 
 body {
-    font-family: 'Plus Jakarta Sans', sans-serif; /* Default Font */
+    font-family: 'Calibri', sans-serif;
 }
 
 /* Typography */
 h1 {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Calibri', sans-serif;
     font-size: 45px;
-    font-weight: 700;
-    text-shadow:
-        0 0 10px rgba(255, 255, 255, 0.8), 
-        0 0 20px rgba(255, 255, 255, 0.5);
+    font-weight: 600;
 }
 
 h2 {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Calibri', sans-serif;
     font-size: 45px;
     font-weight: 500;
 }
 
 h3 {
-    font-family: 'Zen Dots', cursive;
+    font-family: 'Calibri', sans-serif;
     font-size: 40px;
     font-weight: 400;
 }
 
 h4 {
-    font-family: 'Readex Pro', sans-serif;
+    font-family: 'Calibri', sans-serif;
     font-size: 35px;
     font-weight: 500;
 }
@@ -54,8 +51,8 @@ h4 {
     font-weight: 400;
 }
 
-.nav-links a, .dropbtn, .dropdown-content a, .btn-learn-more {
-    font-family: 'Encode Sans Semi Condensed', sans-serif;
+.nav-links a, .dropbtn, .dropdown-content a, .btn-learn-more .btn-sales{
+    font-family: 'Calibri', sans-serif;
 }
 
 .btn-learn-more, 
@@ -64,10 +61,9 @@ h4 {
 .btn-read-more, 
 .hp-btn-read, 
 .btn-see-more-yellow, 
-.btn-sales,
 .hp-btn-see-more {
-    font-family: 'Readex Pro', sans-serif !important;
+    font-family: 'Calibri', sans-serif !important;
     font-size: 18px !important;
-    font-weight: 500; /* Medium sesuai request lu */
-    text-transform: uppercase; /* Opsional: biar makin tegas */
+    font-weight: 500;
+    text-transform: uppercase;
 }
