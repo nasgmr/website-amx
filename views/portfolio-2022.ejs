@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio 2018 - AMX UAV</title>
+    <title>Portfolio 2022 - AMX UAV</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/style.css">
@@ -20,7 +20,6 @@
         const isMobile = window.innerWidth <= 768;
         const timing = { duration: 1500, easing: 'cubic-bezier(0.25, 1, 0.5, 1)', fill: 'forwards' };
 
-        // 1. Animasi Pesawat
         const flyRight = isMobile ? 
             [{ transform: 'translate(-100px, 30px) rotate(15deg)', opacity: 1 }, { transform: 'translate(100vw, -50px) rotate(-5deg)', opacity: 0.5 }] : 
             [{ transform: 'translate(-150px, 30px) rotate(15deg)', opacity: 0, offset: 0 }, { opacity: 1, offset: 0.1 }, { opacity: 1, offset: 0.9 }, { transform: 'translate(100vw, -50px) rotate(-5deg)', opacity: 0.5, offset: 1 }];
@@ -33,8 +32,6 @@
             direction === 'left' ? plane.animate(flyLeft, timing) : plane.animate(flyRight, timing);
         }, 50);
 
-        // 2. LOGIKA UTAMA (Yang sebelumnya "gaada" di file kamu)
-        // Cari kontainer portfolio-list
         const contentContainers = document.querySelectorAll(".portfolio-list");
         const mainContent = contentContainers.length > 0 ? contentContainers[0] : null;
 
@@ -42,20 +39,17 @@
             const dragLeftAnim = [{ transform: 'translateX(100vw) scale(0.9) skewX(-5deg)', opacity: 0 }, { transform: 'translateX(-20px) scale(1.02) skewX(2deg)', opacity: 1, offset: 0.8 }, { transform: 'translateX(0) scale(1) skewX(0deg)', opacity: 1 }];
             const dragRightAnim = [{ transform: 'translateX(-100vw) scale(0.9) skewX(5deg)', opacity: 0 }, { transform: 'translateX(20px) scale(1.02) skewX(-2deg)', opacity: 1, offset: 0.8 }, { transform: 'translateX(0) scale(1) skewX(0deg)', opacity: 1 }];
 
-            // Daftarkan elemen yang mau digerakkan (Judul Portfolio + List Proyek)
             const elementsToAnimate = document.querySelectorAll(".portfolio-list");
             
             elementsToAnimate.forEach(el => {
                 if (direction === 'left') {
                     el.animate(dragLeftAnim, timing);
                 } else {
-                    // DEFAULT ANIMATION: Ini yang bikin konten gerak pas diklik dari navbar atas (fly = null)
                     el.animate(dragRightAnim, timing); 
                 }
             });
         }
 
-        // 3. Logika Navigasi Timeline
         const order = ['2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'];
         const currentPath = window.location.pathname.toLowerCase();
         let currentIndex = order.findIndex(id => currentPath.includes(id));

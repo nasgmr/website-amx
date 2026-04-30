@@ -21,7 +21,6 @@
         const isMobile = window.innerWidth <= 768;
         const timing = { duration: 1500, easing: 'cubic-bezier(0.25, 1, 0.5, 1)', fill: 'forwards' };
 
-        // 1. Animasi Pesawat
         const flyRight = isMobile ? 
             [{ transform: 'translate(-100px, 30px) rotate(15deg)', opacity: 1 }, { transform: 'translate(100vw, -50px) rotate(-5deg)', opacity: 0.5 }] : 
             [{ transform: 'translate(-150px, 30px) rotate(15deg)', opacity: 0, offset: 0 }, { opacity: 1, offset: 0.1 }, { opacity: 1, offset: 0.9 }, { transform: 'translate(100vw, -50px) rotate(-5deg)', opacity: 0.5, offset: 1 }];
@@ -34,8 +33,6 @@
             direction === 'left' ? plane.animate(flyLeft, timing) : plane.animate(flyRight, timing);
         }, 50);
 
-        // 2. LOGIKA UTAMA (Sesuai Referensi Portfolio)
-        // Targetkan kontainer list produk
         const contentContainers = document.querySelectorAll(".product-list");
         const mainContent = contentContainers.length > 0 ? contentContainers[0] : null;
 
@@ -43,21 +40,17 @@
             const dragLeftAnim = [{ transform: 'translateX(100vw) scale(0.9) skewX(-5deg)', opacity: 0 }, { transform: 'translateX(-20px) scale(1.02) skewX(2deg)', opacity: 1, offset: 0.8 }, { transform: 'translateX(0) scale(1) skewX(0deg)', opacity: 1 }];
             const dragRightAnim = [{ transform: 'translateX(-100vw) scale(0.9) skewX(5deg)', opacity: 0 }, { transform: 'translateX(20px) scale(1.02) skewX(-2deg)', opacity: 1, offset: 0.8 }, { transform: 'translateX(0) scale(1) skewX(0deg)', opacity: 1 }];
 
-            // Daftarkan elemen yang mau digerakkan
-            // JANGAN masukkan .products-container agar judul dan navigasi tetap diam
             const elementsToAnimate = document.querySelectorAll(".product-list, .drone-usage-section");
             
             elementsToAnimate.forEach(el => {
                 if (direction === 'left') {
                     el.animate(dragLeftAnim, timing);
                 } else {
-                    // DEFAULT ANIMATION: Jalan saat diklik dari navbar (fly = null)
                     el.animate(dragRightAnim, timing); 
                 }
             });
         }
 
-        // 3. Logika Navigasi Sub-Tab
         const order = ['mapping', 'education'];
         const currentPath = window.location.pathname.toLowerCase();
         let currentIndex = order.findIndex(id => currentPath.includes(id));
