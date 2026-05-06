@@ -1424,7 +1424,6 @@ body {
 .partner-card h3 {
     color: #ffffff;
     font-size: 16px;
-    font-family: 'Allerta Stencil', sans-serif;
     text-transform: uppercase;
     margin: 0;
     text-align: center;
@@ -1751,7 +1750,7 @@ body {
     color: #ffffff;
     font-size: 46px;
     text-transform: uppercase;
-    font-family: 'Allerta Stencil', sans-serif;
+    font-family: 'Sans Jakarta Plus', sans-serif;
     margin-bottom: 15px;
     letter-spacing: 2px;
 }
