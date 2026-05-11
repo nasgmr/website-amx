@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const resourcesController = require('../controllers/resourcesController');
 
-router.get('/resources', (req, res) => {
-    res.render('resources-main'); 
-});
+router.get('/resources', resourcesController.getResourcesMain);
 
 module.exports = router;

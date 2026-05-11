@@ -1,20 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const dronepediaController = require('../controllers/dronepediaController');
 
-router.get('/products/dronepedia', (req, res) => {
-    res.redirect('/products/dronepedia/how-it-works');
-});
-
-router.get('/products/dronepedia/how-it-works', (req, res) => {
-    res.render('dronepedia-how-it-works'); 
-});
-
-router.get('/products/dronepedia/classifications', (req, res) => {
-    res.render('dronepedia-classifications'); 
-});
-
-router.get('/products/dronepedia/applications', (req, res) => {
-    res.render('dronepedia-applications'); 
-});
+router.get('/products/dronepedia', dronepediaController.redirectDronepedia);
+router.get('/products/dronepedia/how-it-works', dronepediaController.getHowItWorks);
+router.get('/products/dronepedia/classifications', dronepediaController.getClassifications);
+router.get('/products/dronepedia/applications', dronepediaController.getApplications);
 
 module.exports = router;

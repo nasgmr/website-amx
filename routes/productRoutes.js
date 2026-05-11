@@ -1,28 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const productController = require('../controllers/productController');
 
-router.get('/products', (req, res) => {
-    res.redirect('/products/mapping');
-});
-
-router.get('/products/mapping', (req, res) => {
-    res.render('products-mapping', { active: 'mapping' }); 
-});
-
-router.get('/products/education', (req, res) => {
-    res.render('products-education', { active: 'education' }); 
-});
-
-router.get('/products/vertic-air', (req, res) => {
-    res.render('vertic-air');
-});
-
-router.get('/products/vertic-xl',(req, res) => {
-    res.render('vertic-xl');
-});
-
-router.get('/products/qubit', (req, res) => {
-    res.render('qubit');
-});
+router.get('/products', productController.redirectProducts);
+router.get('/products/mapping', productController.getMappingProducts);
+router.get('/products/education', productController.getEducationProducts);
+router.get('/products/vertic-air', productController.getVerticAir);
+router.get('/products/vertic-xl', productController.getVerticXL);
+router.get('/products/qubit', productController.getQubit);
 
 module.exports = router;

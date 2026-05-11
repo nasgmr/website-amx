@@ -1,24 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const usecaseController = require('../controllers/usecaseController');
 
-router.get('/use-case', (req, res) => {
-    res.redirect('/use-case/infrastructure');
-});
-
-router.get('/use-case/infrastructure', (req, res) => {
-    res.render('use-case-infrastructure', { active: 'infrastructure' }); 
-});
-
-router.get('/use-case/tourism', (req, res) => {
-    res.render('use-case-tourism', { active: 'tourism' }); 
-});
-
-router.get('/use-case/agri-forest', (req, res) => {
-    res.render('use-case-agri-forest', { active: 'agri-forest' }); 
-});
-
-router.get('/use-case/agri-plant', (req, res) => {
-    res.render('use-case-agri-plant', { active: 'agri-plant' }); 
-});
+router.get('/use-case', usecaseController.redirectUseCase);
+router.get('/use-case/infrastructure', usecaseController.getInfrastructure);
+router.get('/use-case/tourism', usecaseController.getTourism);
+router.get('/use-case/agri-forest', usecaseController.getAgriForest);
+router.get('/use-case/agri-plant', usecaseController.getAgriPlant);
 
 module.exports = router;

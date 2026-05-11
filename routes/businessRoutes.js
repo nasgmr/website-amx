@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const businessController = require('../controllers/businessController');
 
-router.get('/about-us/business-scale', (req, res) => {
-    res.render('business-scale'); 
-});
+router.get('/about-us/business-scale', businessController.getBusinessScale);
 
 module.exports = router;

@@ -1,12 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const articlesController = require('../controllers/articlesController');
 
-router.get('/about-us/articles', (req, res) => {
-    res.render('articles'); 
-});
-
-router.get('/about-us/articles/detail', (req, res) => {
-    res.render('articles-detail');
-});
+router.get('/about-us/articles', articlesController.getArticlesList);
+router.get('/about-us/articles/detail', articlesController.getArticleDetail);
 
 module.exports = router;
