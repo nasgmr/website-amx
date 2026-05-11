@@ -4,17 +4,17 @@ const expressLayouts = require('express-ejs-layouts');
 
 const app = express();
 
-const indexRouter = require('./routes/index');
-const productRouter = require('./routes/productRoutes');
-const serviceRouter = require('./routes/serviceRoutes');
-const resourcesRoutes = require('./routes/resourcesRoutes');
-const usecaseRoutes = require('./routes/usecaseRoutes');
-const dronepediaRoutes = require('./routes/dronepediaRoutes');
-const aboutusRoutes = require('./routes/aboutusRoutes');
-const businessRoutes = require('./routes/businessRoutes');
-const partnersRoutes = require('./routes/partnersRoutes');
-const portfolioRoutes = require('./routes/portfolioRoutes');
-const articlesRoutes = require('./routes/articlesRoutes');
+const indexRouter = require('./routes/index.routes');
+const productRouter = require('./routes/products.routes');
+const serviceRouter = require('./routes/services.routes');
+const resourcesRoutes = require('./routes/resources.routes');
+const usecaseRoutes = require('./routes/use-case.routes');
+const dronepediaRoutes = require('./routes/dronepedia.routes');
+const aboutusRoutes = require('./routes/about-us.routes');
+const businessRoutes = require('./routes/business.routes');
+const partnersRoutes = require('./routes/partners.routes');
+const portfolioRoutes = require('./routes/portfolio.routes');
+const articlesRoutes = require('./routes/articles.routes');
 
 app.use(expressLayouts);
 app.set('layout', 'layout');
@@ -24,16 +24,16 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/', aboutusRoutes);
-app.use('/', businessRoutes);
-app.use('/', partnersRoutes);
-app.use('/', portfolioRoutes);
-app.use('/', serviceRouter);
-app.use('/', usecaseRoutes);
-app.use('/', dronepediaRoutes);
-app.use('/', resourcesRoutes);
-app.use('/', productRouter);
-app.use('/', articlesRoutes);
+app.use('/', aboutUsRouter);
+app.use('/', businessRouter);
+app.use('/', partnersRouter);
+app.use('/', portfolioRouter);
+app.use('/', servicesRouter);
+app.use('/', useCasesRouter);
+app.use('/', dronepediaRouter);
+app.use('/', resourcesRouter);
+app.use('/', productsRouter);
+app.use('/', articlesRouter);
 
 app.use((req, res) => {
     res.status(404).send(`
