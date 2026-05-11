@@ -2,6 +2,6 @@ const express = require('express');
 const router = express.Router();
 const aboutusController = require('../controllers/about-us.controller');
 
-router.get('/about-us', about-us.controller.getAboutUsPage);
+router.get('/about-us', aboutusController.getAboutUsPage);
 
 module.exports = router;

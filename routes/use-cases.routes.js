@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const usecaseController = require('../controllers/use-cases.controller');
 
-router.get('/use-case', use-cases.controller.redirectUseCase);
-router.get('/use-case/infrastructure', use-cases.controller.getInfrastructure);
-router.get('/use-case/tourism', use-cases.controller.getTourism);
-router.get('/use-case/agri-forest', use-cases.controller.getAgriForest);
-router.get('/use-case/agri-plant', use-cases.controller.getAgriPlant);
+router.get('/use-case', usecaseController.redirectUseCase);
+router.get('/use-case/infrastructure', usecaseController.getInfrastructure);
+router.get('/use-case/tourism', usecaseController.getTourism);
+router.get('/use-case/agri-forest', usecaseController.getAgriForest);
+router.get('/use-case/agri-plant', usecaseController.getAgriPlant);
 
 module.exports = router;

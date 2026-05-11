@@ -1,3 +1,3 @@
 exports.getHomePage = (req, res) => {
-    res.render('index', { title: 'Home | AMX UAV' });
+  res.render('index', { title: 'Home | AMX UAV' });
 };

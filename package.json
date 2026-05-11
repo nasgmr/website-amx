@@ -4,12 +4,20 @@
   "description": "AMX UAV Company Profile",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.21.0",
     "express-ejs-layouts": "^2.5.1"
-  }
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0",
+    "prettier": "^3.3.0"
+  },
+  "author": "",
+  "license": "ISC"
 }

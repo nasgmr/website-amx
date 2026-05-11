@@ -2,6 +2,6 @@ const express = require('express');
 const router = express.Router();
 const serviceController = require('../controllers/services.controller');
 
-router.get('/services', services.controller.getServicesPage);
+router.get('/services', serviceController.getServicesPage);
 
 module.exports = router;
