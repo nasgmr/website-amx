@@ -51,7 +51,11 @@ h4 {
     font-weight: 400;
 }
 
-.nav-links a, .dropbtn, .dropdown-content a, .btn-learn-more .btn-sales{
+.nav-links a,
+.dropbtn,
+.dropdown-content a,
+.btn-learn-more,
+.btn-sales {
     font-family: 'Calibri', sans-serif;
 }
 
