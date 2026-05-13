@@ -6,19 +6,17 @@ const expressLayouts = require('express-ejs-layouts');
 
 const app = express();
 
-const routes = {
-  index: require('./routes/index'),
-  products: require('./routes/productRoutes'),
-  services: require('./routes/serviceRoutes'),
-  resources: require('./routes/resourcesRoutes'),
-  usecases: require('./routes/usecaseRoutes'),
-  dronepedia: require('./routes/dronepediaRoutes'),
-  about: require('./routes/aboutusRoutes'),
-  business: require('./routes/businessRoutes'),
-  partners: require('./routes/partnersRoutes'),
-  portfolio: require('./routes/portfolioRoutes'),
-  articles: require('./routes/articlesRoutes'),
-};
+const indexRoutes = require('./routes/index.routes');
+const productsRoutes = require('./routes/products.routes');
+const servicesRoutes = require('./routes/services.routes');
+const resourcesRoutes = require('./routes/resources.routes');
+const useCasesRoutes = require('./routes/use-cases.routes');
+const dronepediaRoutes = require('./routes/dronepedia.routes');
+const aboutUsRoutes = require('./routes/about-us.routes');
+const businessRoutes = require('./routes/business.routes');
+const partnersRoutes = require('./routes/partners.routes');
+const portfolioRoutes = require('./routes/portfolio.routes');
+const articlesRoutes = require('./routes/articles.routes');
 
 app.use(expressLayouts);
 app.set('layout', 'layout');
